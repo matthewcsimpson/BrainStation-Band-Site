@@ -32,3 +32,33 @@ body {
     font-size: 100%;
     font-family: $bandsite-font;
 }
+
+
+// global text styles
+.page-header-global {
+    font-size: $mobile-page-header-size;
+    line-height: $mobile-page-header-lh;
+    font-weight: $font-bold;
+}
+
+.section-heading-global{
+    padding-top: $mobile-headline-p-top;
+    font-size: $mobile-section-header-size;
+    font-weight: $font-bold;
+}
+
+.subheading-global {
+    font-size: $mobile-subheader-size;
+    line-height: $mobile-subheader-lh;
+    font-weight: $font-demi;
+}
+
+.body-copy-global {
+    font-size: $mobile-body-copy-size;
+    line-height: $mobile-body-copy-lh;
+}
+
+.footer-copy-global {
+    font-size: $mobile-footer-copy-size;
+    line-height: $mobile-footer-copy-lh;
+}

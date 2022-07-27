@@ -71,16 +71,14 @@
     background-repeat: no-repeat;
     &__wrapper {
         min-height: 50vw;
-        // height: 15rem;
         padding: 0 $mobile-component-p;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
     }
-    &__title {
-        font-size: $mobile-page-header-size;
-        font-weight: $font-bold;
+    &__page-heading {
+        @extend .page-header-global;
         color: $bandsite-white;
     }
 }
@@ -93,24 +91,30 @@
         padding: 0 1rem;
     }
     &__section-heading {
-        width: 100%;
-        padding-top: $mobile-headline-p-top;
+        @extend .section-heading-global;
+        // width: 100%;
+        // padding-top: $mobile-headline-p-top;
     }
     &__img {
         width: 100%;
         padding-top: $mobile-component-p;
     }
     &__highlight-text {
+        @extend .body-copy-global;
         padding-top: $mobile-component-p;
         font-weight: $font-demi;
     }
-    &__bio{
+    // &__bio{
 
-    }
+    // }
     &__bio-heading{
         padding-top: $mobile-component-p;
     }
+    &__bio-subheading{
+        @extend .subheading-global;
+    }
     &__bio-text {
+        @extend .body-copy-global;
         padding-top: $mobile-component-p;
     }
 }
@@ -122,8 +126,9 @@
         padding: $mobile-component-p;
     }
     &__section-heading {
-        width: 100%;
-        padding-top: $mobile-headline-p-top;
+        @extend .section-heading-global;
+        // width: 100%;
+        // padding-top: $mobile-headline-p-top;
     }
     &__imgs-wrapper {
         width: 100%;
@@ -146,18 +151,18 @@
     background: $bandsite-black;
     color: $bandsite-white;
     &__wrapper{
-        width: 60%;
+        width: 70%;
         padding: 0 $mobile-component-p $mobile-component-p;
         display: flex;
         flex-direction: column;
     }
     &__section-header{
-        padding-top: $mobile-headline-p-top;
-        font-size: $mobile-subheader-size;
-        font-weight: $font-bold;
+        @extend .section-heading-global;
+        // padding-top: $mobile-headline-p-top;
+        // font-size: $mobile-subheader-size;
+        // font-weight: $font-bold;
     }
     &__social-icons{
-        border: 1px solid green;
         padding-top: $mobile-headline-p-top;
         width: 50%;
         display: flex;
@@ -176,17 +181,15 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        &-top{
-            // border: 1px solid green;        
-        }
+        // &-top{
+        // }
     }
     &__copyright{
         order: 2;
         padding-top: $mobile-headline-p-top;
     }
     &__copy{
-        font-size: $mobile-footer-copy-size;
-        line-height: $mobile-footer-copy-lh;
+        @extend .footer-copy-global;
         &--name{
             font-weight: $font-demi;
         }
