@@ -9,49 +9,43 @@
 
 // Header/Nav Section -------------------------
 
-.page-header{
+.header {
     background: $bandsite-black;
     color: $bandsite-white;  
-    // padding: 0 1rem; 
-    
-}
 
-.header__wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.header__logo {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.header__logo-img{
-    height: 1.25rem;
-    width: 7.5rem;
-}
-
-.header__nav {
-    width: 100%;
-}
-.header__nav-list{
-    border: 1px solid red;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.header__nav-item{
-    list-style: none;
-    font-size: $mobile-page-header-size;
-    font-weight: 400;
-    line-height: $mobile-page-header-lh;
-    border: 1px solid red;
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__logo {
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+    &__logo-img {
+        height: 1.25rem;
+        width: 7.5rem;
+    }
+    &__nav {
+        width: 100%;
+    }
+    &__nav-list {
+        // border: 1px solid red;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__nav-item {
+        list-style: none;
+        font-size: $mobile-page-header-size;
+        font-weight: 400;
+        line-height: $mobile-page-header-lh;
+        // border: 1px solid red;
+    }
 }
 // Hero Section -------------------------
 
@@ -60,56 +54,64 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 25vh;
-}
-
-.hero__wrapper {
-    padding: 0 1rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.hero__title{
-    font-size: $mobile-page-header-size;
-    font-weight: $mobile-page-header-wgt;
-    line-height: $mobile-page-header-lh;
-    color: $bandsite-white;
+    &__wrapper {
+        padding: 0 1rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    &__title {
+        font-size: $mobile-page-header-size;
+        font-weight: $mobile-page-header-wgt;
+        line-height: $mobile-page-header-lh;
+        color: $bandsite-white;
+    }
 }
 
 // Bio Section -------------------------
 
-.about__section-heading {
-    width: 100%;
-    padding: 0 1rem;
+.about {
+    &__section-heading {
+        width: 100%;
+    }
+    &__img {
+        width: 100%;
+    }
+    &__wrapper {
+        border: 1px solid red;
+        padding: 0 1rem;
+
+    }
 }
-
-// .about_heading{
-//     display: inline-block;
-// }
-
-.about__img {
-    width: 100%;
-    padding: 0 1rem
-}
-
 // Gallery Section -------------------------
 
-.gallery__wrapper{
-    width: 100%;
-}
-
-.gallery__images{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-.gallery__img {
-    width: 100%;
-    padding: 16px;
+.gallery{
+    &__wrapper {
+        width: 100%;
+    }
+    &__images {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__img {
+        width: 100%;
+        padding: 1rem;
+    }
 }
 
 // Footer Section -------------------------
+
+
+
+.footer{
+    background: $bandsite-black;
+    color: $bandsite-white;
+    &__wrapper{
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
