@@ -28,6 +28,13 @@ $desktop-margin: auto;
 $desktop-gutter: 1.5rem;    // 24px
 $desktop-column: 3.9375rem; // 63px
 
+// padding amts. 
+$mobile-headline-p-top: 24px;
+$mobile-component-p: 16px;
+
+$desktop-headling-p-top: 48px;
+$desktop-component-p: 26px;
+
 // font weights
 $font-bold: 700;
 $font-demi: 600;
@@ -36,50 +43,38 @@ $font-normal: 400;
 // mobile text sizes
 $mobile-page-header-size: 1.5rem;   // 24px
 $mobile-page-header-lh: 2rem;       // 32px
-// $mobile-page-header-wgt: 700;
 
 $mobile-section-header-size: 1.5rem;
 $mobile-section-header-lh: 2rem;
-// $mobile-section-header-wgt: 700;
 
 $mobile-subheader-size: .875rem;    // 14px
 $mobile-subheader-lh: 1.375rem;     // 22px
-// $mobile-subheader-wgt: 600;
 
 $mobile-body-copy-size: .8125rem;   // 13px
 $mobile-body-copy-lh: 1.125rem;     // 18px
-// $mobile-body-copy-wgt: 400;
 
 $mobile-footer-copy-size: .8125rem; // 13px
 $mobile-footer-copy-lh: 1.125rem;   // 18px
-// $mobile-footer-copy-wgt: 400;
 
 $mobile-buttons-size: .625rem;      // 10px
 $mobile-buttons-lh: 1.25rem;        // 20px
-// $mobile-buttons-wgt: 700;
 
 // desktop text sizes
 $desktop-page-header-size: 3.75rem; 
 $desktop-page-header-lh: 4.25rem;
-// $desktop-page-header-wgt: 700;
 
 $desktop-section-header-size: 2.25rem;
 $desktop-section-header-lh: 2.75rem;
-// $desktop-section-header-wgt: 700;
 
 $desktop-subheader-size: 1.5rem;
 $desktop-subheader-lh: 2rem;
-// $desktop-subheader-wgt: 600;
 
 $desktop-body-copy-size: .875rem;
 $desktop-body-copy-lh: 1.375rem;
-// $desktop-body-copy-wgt: 400;
 
 $desktop-footer-copy-size: .875rem;
 $desktop-footer-copy-lh: 1.25rem;
-// $desktop-footer-copy-wgt: 400;
 
 $desktop-buttons-size: .75rem;
 $desktop-buttons-lh: 1.25rem;
-// $desktop-buttons-wgt: 700;
 
