@@ -12,7 +12,6 @@
 .header {
     background: $bandsite-black;
     color: $bandsite-white;  
-
     &__wrapper {
         width: 100%;
         display: flex;
@@ -32,19 +31,25 @@
     }
     &__nav {
         width: 100%;
+
     }
     &__nav-list {
-        // border: 1px solid red;
         width: 100%;
         display: flex;
         justify-content: space-evenly;
     }
     &__nav-item {
+        width: 100%;
         list-style: none;
         font-size: $mobile-page-header-size;
-        font-weight: 400;
+        font-weight: $font-normal;
         line-height: $mobile-page-header-lh;
-        // border: 1px solid red;
+        padding: 1rem;
+    }
+    &__nav-link {
+        color: $bandsite-white;
+        text-decoration: none;
+        width: 100%;
     }
 }
 // Hero Section -------------------------
@@ -80,7 +85,7 @@
         width: 100%;
     }
     &__wrapper {
-        border: 1px solid red;
+        // border: 1px solid red;
         padding: 0 1rem;
 
     }
