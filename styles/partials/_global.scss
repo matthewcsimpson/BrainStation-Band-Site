@@ -21,14 +21,14 @@
     font-style: normal;
 }
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid green;
+    // border: 1px solid green;
 }
 
-html {
+body {
     font-size: 100%;
+    font-family: $bandsite-font;
 }
