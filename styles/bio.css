@@ -33,7 +33,7 @@ body {
   font-weight: 700;
 }
 
-.section-heading-global, .about__section-heading, .gallery__section-heading, .footer__section-header {
+.section-heading-global, .about__heading, .gallery_-heading, .footer__heading {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -177,7 +177,7 @@ body {
 }
 .footer__social-icons {
   padding-top: 24px;
-  width: 50%;
+  width: 40%;
   display: flex;
   justify-content: space-between;
 }
