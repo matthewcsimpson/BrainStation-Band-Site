@@ -29,11 +29,14 @@ $desktop-gutter: 1.5rem;    // 24px
 $desktop-column: 3.9375rem; // 63px
 
 // padding amts. 
-$mobile-headline-p-top: 24px;
-$mobile-component-p: 16px;
+$mobile-headline-p-top: 1.5rem;
+$mobile-component-p: 1rem;
+$mobile-component-px2: 2rem;
 
-$desktop-headling-p-top: 48px;
-$desktop-component-p: 26px;
+
+$desktop-headline-p-top: 3rem;
+$desktop-component-p: 1.625rem;
+$desktop-component-px2: 3.25rem;
 
 // font weights
 $font-bold: 700;
