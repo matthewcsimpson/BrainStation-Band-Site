@@ -33,7 +33,6 @@ body {
     font-family: $bandsite-font;
 }
 
-
 // global text styles
 .page-header-global {
     font-size: $mobile-page-header-size;
@@ -42,9 +41,10 @@ body {
 }
 
 .section-heading-global{
-    padding-top: $mobile-headline-p-top;
     font-size: $mobile-section-header-size;
+    line-height: $mobile-section-header-lh;
     font-weight: $font-bold;
+    padding-top: $mobile-headline-p-top;
 }
 
 .subheading-global {

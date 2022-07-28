@@ -4,8 +4,7 @@
 
 // Header/Nav Section -------------------------
 
-// .wholesite__wrapper {
-// }
+
 
 // Header/Nav Section -------------------------
 
@@ -87,13 +86,10 @@
 
 .about {
     &__wrapper {
-        // border: 4px solid red;
         padding: 0 1rem;
     }
     &__section-heading {
         @extend .section-heading-global;
-        // width: 100%;
-        // padding-top: $mobile-headline-p-top;
     }
     &__img {
         width: 100%;
@@ -127,8 +123,6 @@
     }
     &__section-heading {
         @extend .section-heading-global;
-        // width: 100%;
-        // padding-top: $mobile-headline-p-top;
     }
     &__imgs-wrapper {
         width: 100%;
@@ -158,9 +152,6 @@
     }
     &__section-header{
         @extend .section-heading-global;
-        // padding-top: $mobile-headline-p-top;
-        // font-size: $mobile-subheader-size;
-        // font-weight: $font-bold;
     }
     &__social-icons{
         padding-top: $mobile-headline-p-top;

@@ -34,9 +34,10 @@ body {
 }
 
 .section-heading-global, .about__section-heading, .gallery__section-heading, .footer__section-header {
-  padding-top: 24px;
   font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
+  padding-top: 24px;
 }
 
 .subheading-global, .about__bio-subheading {
