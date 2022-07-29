@@ -40,6 +40,7 @@
         flex-direction: row;
     }
     &__nav-item {
+        border: 1px solid red;
         width: 49%;
         list-style: none;
         text-align: center;
@@ -139,10 +140,17 @@
         padding-top: $mobile-component-p;
         font-weight: $font-demi;
         @include tablet {
-            font-size: $desktop-body-copy-size;
-            line-height: $desktop-body-copy-lh;
+            font-size: $desktop-subheader-size;
+            line-height: $desktop-subheader-lh;
             padding-top: $desktop-component-p;
             font-weight: $font-demi;
+            color: $bandsite-black;
+        }
+        &--name{
+            @include tablet {
+                font-size: $desktop-body-copy-size;
+                padding-top: $desktop-component-p;
+            }
         }
     }
     &__bio{
@@ -153,6 +161,9 @@
 
     &__bio-heading{
         padding-top: $mobile-component-p;
+        @include tablet {
+            padding-top: $desktop-headline-p-top;
+        }
     }
     &__bio-subheading{
         font-size: $mobile-subheader-size;
@@ -249,7 +260,6 @@
             justify-content: space-between;
         }
     }
-
     &__heading {
         border: 1px solid red;
         font-size: $mobile-section-header-size;
@@ -260,25 +270,28 @@
             font-size: $desktop-section-header-size;
             line-height: $desktop-section-header-lh;
             font-weight: $font-bold;
-            padding-top: 0;
-            width: 32%;
+            width: 33%;
         }
         }
     &__social-icons{
         border: 1px solid red;
-
         padding-top: $mobile-headline-p-top;
         width: 40%;
         display: flex;
         justify-content: space-between;
         @include tablet {
             width: 33%;
-            padding-right: $desktop-component-px2;
+            justify-content: flex-start;
         }
     }
     &__social-icon{
-        display: block;
-        width: 1.5rem;
+        width: $mobile-section-header-size;
+        height: $mobile-section-header-size;
+        @include tablet{
+            width: $desktop-section-header-size;
+            height: $desktop-section-header-size;
+            margin-right: 2rem;
+        }
     }
     &__logo {
         border: 1px solid red;
@@ -310,6 +323,8 @@
         padding-top: $mobile-component-p;
         @include tablet {
             order: 0;
+            flex-grow: 1;
+            padding-top: $desktop-component-p;
         }
     }
     &__copy{
