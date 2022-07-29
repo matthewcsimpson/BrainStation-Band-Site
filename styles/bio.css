@@ -95,7 +95,8 @@ body {
   border-bottom: 2px solid #FFFFFF;
 }
 .header__nav-link:hover {
-  border-bottom: 2px solid #E1E1E1;
+  color: #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
 }
 
 .hero {
@@ -321,6 +322,7 @@ body {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
+    padding-top: 3rem;
     width: 33%;
   }
 }
@@ -335,6 +337,7 @@ body {
   .footer__social-icons {
     width: 33%;
     justify-content: flex-start;
+    padding-top: 3rem;
   }
 }
 .footer__social-icon {
@@ -360,6 +363,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-content: center;
+    padding-top: 3rem;
   }
 }
 .footer__contact-card {

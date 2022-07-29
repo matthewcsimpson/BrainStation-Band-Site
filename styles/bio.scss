@@ -64,7 +64,9 @@
             border-bottom: 2px solid $bandsite-white;
         }
         &:hover{
-            border-bottom: 2px solid $bandsite-mercury;
+            color: $bandsite-white;
+            border-bottom: 2px solid $bandsite-white;
+
         }
     }
 }
@@ -82,8 +84,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        // background-color: $bandsite-black;
-        // opacity: 50%;
         @include tablet {
             padding: 0 $desktop-component-p;
         }
@@ -93,8 +93,6 @@
         line-height: $mobile-page-header-lh;
         font-weight: $font-bold;
         color: $bandsite-white;
-        // background-color: none;
-        // opacity: 100%;
         @include tablet {
             font-size: $desktop-page-header-size;
             font-size: $desktop-page-header-size;
@@ -273,6 +271,7 @@
             font-size: $desktop-section-header-size;
             line-height: $desktop-section-header-lh;
             font-weight: $font-bold;
+            padding-top: $desktop-headline-p-top;
             width: 33%;
         }
         }
@@ -285,6 +284,8 @@
         @include tablet {
             width: 33%;
             justify-content: flex-start;
+            padding-top: $desktop-headline-p-top;
+
         }
     }
     &__social-icon{
@@ -306,6 +307,7 @@
             display: flex;
             justify-content: flex-end;
             align-content: center;
+            padding-top: $desktop-headline-p-top;
         }
         @include desktop {
         }
