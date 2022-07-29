@@ -82,6 +82,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        // background-color: $bandsite-black;
+        // opacity: 50%;
         @include tablet {
             padding: 0 $desktop-component-p;
         }
@@ -91,6 +93,8 @@
         line-height: $mobile-page-header-lh;
         font-weight: $font-bold;
         color: $bandsite-white;
+        // background-color: none;
+        // opacity: 100%;
         @include tablet {
             font-size: $desktop-page-header-size;
             font-size: $desktop-page-header-size;
@@ -302,6 +306,8 @@
             display: flex;
             justify-content: flex-end;
             align-content: center;
+        }
+        @include desktop {
         }
     }
     // &__logo-img {
