@@ -40,7 +40,6 @@
         flex-direction: row;
     }
     &__nav-item {
-        border: 1px solid red;
         width: 49%;
         list-style: none;
         text-align: center;
@@ -53,10 +52,11 @@
         width: 100%;
         color: $bandsite-mercury;
         text-decoration: none;
+        padding: $mobile-component-p;
         @include tablet {
             width: auto;
             height: 100%;
-            padding: 1rem 0;
+            padding: $desktop-component-p 0;
         }
         &--active {
             font-weight: $font-demi;
@@ -64,8 +64,7 @@
             border-bottom: 2px solid $bandsite-white;
         }
         &:hover{
-            border-bottom: 2px solid $bandsite-white;
-
+            border-bottom: 2px solid $bandsite-mercury;
         }
     }
 }
@@ -300,11 +299,13 @@
         @include tablet {
             order: 0;
             width: 33%;
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
         }
     }
-    &__logo-img {
-        border: 1px solid green;
-    }
+    // &__logo-img {
+    // }
     &__contact-card {
         border: 1px solid red;
         padding: $mobile-component-p 0 0;

@@ -68,7 +68,6 @@ body {
   flex-direction: row;
 }
 .header__nav-item {
-  border: 1px solid red;
   width: 49%;
   list-style: none;
   text-align: center;
@@ -81,12 +80,13 @@ body {
   width: 100%;
   color: #E1E1E1;
   text-decoration: none;
+  padding: 1rem;
 }
 @media (min-width: 768px) {
   .header__nav-link {
     width: auto;
     height: 100%;
-    padding: 1rem 0;
+    padding: 1.625rem 0;
   }
 }
 .header__nav-link--active {
@@ -95,7 +95,7 @@ body {
   border-bottom: 2px solid #FFFFFF;
 }
 .header__nav-link:hover {
-  border-bottom: 2px solid #FFFFFF;
+  border-bottom: 2px solid #E1E1E1;
 }
 
 .hero {
@@ -357,10 +357,10 @@ body {
   .footer__logo {
     order: 0;
     width: 33%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
   }
-}
-.footer__logo-img {
-  border: 1px solid green;
 }
 .footer__contact-card {
   border: 1px solid red;

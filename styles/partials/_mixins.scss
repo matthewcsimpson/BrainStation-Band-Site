@@ -1,5 +1,7 @@
 @use './variables' as *;
 
+// breakpoints
+
 @mixin tablet {
     @media (min-width: $tablet-width){
         @content;
