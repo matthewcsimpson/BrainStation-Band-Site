@@ -16,15 +16,28 @@
         @include tablet {
             flex-direction: row;
             width: 50%;
+            justify-content: flex-start;
+        }
+        @include desktop {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
         }
     }
     &__logo {
         width: 100%;
-        padding: $mobile-component-p;
         display: flex;
         justify-content: center;
+        padding: $mobile-component-p;
         @include tablet {
+            width: 40%;
+            justify-content: left;
             padding: $desktop-component-p;
+
+        }
+        @include desktop {
+            padding-left: $desktop-wider-p;
+            width: 25%;
         }
     }
     &__logo-img {
@@ -33,11 +46,21 @@
     }
     &__nav {
         width: 100%;
+        @include tablet {
+            width: 50%;
+        }
+        @include desktop {
+            width: 30%;
+        }
     }
     &__nav-list {
         width: 100%;
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
+        @include desktop {
+            justify-content: flex-start;
+        }
     }
     &__nav-item {
         width: 49%;
@@ -46,16 +69,21 @@
         font-size: $mobile-subheader-size;
         font-weight: $font-normal;
         margin: 0 auto;
+        @include tablet {
+            font-size: $mobile-subheader-size;
+            margin: 0 $desktop-component-p;
+        }
+        @include desktop {
+            width: 20%;
+        }
     }
     &__nav-link {
-        display: inline-block;
         width: 100%;
+        display: inline-block;
         color: $bandsite-mercury;
         text-decoration: none;
-        padding: $mobile-component-p;
+        padding: $mobile-component-p 0;
         @include tablet {
-            width: auto;
-            height: 100%;
             padding: $desktop-component-p 0;
         }
         &--active {
@@ -87,6 +115,11 @@
         @include tablet {
             padding: 0 $desktop-component-p;
         }
+        @include desktop {
+            padding: 0 $desktop-wider-p;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
     }
     &__page-heading {
         font-size: $mobile-page-header-size;
@@ -99,6 +132,7 @@
             line-height: $desktop-page-header-lh;
             font-weight: $font-bold;
         }
+
     }
 }
 
@@ -109,6 +143,11 @@
         padding: 0 1rem;
         @include tablet {
             padding: 0 $desktop-component-p;
+        }
+        @include desktop {
+            padding: 0 $desktop-wider-p;
+            max-width: 1280px;
+            margin: 0 auto;
         }
     }
     &__heading{
@@ -202,10 +241,19 @@
 
 .gallery {
     background-color: $bandsite-alabaster;
+    margin-top: $mobile-component-p;
+    @include desktop {
+        margin-top: $desktop-component-p;
+    }
     &__wrapper{
         padding: $mobile-component-p;
         @include tablet {
             padding: $desktop-component-p;
+        }
+        @include desktop {
+            padding: 0 $desktop-wider-p;
+            max-width: 1280px;
+            margin: 0 auto;
         }
     }
     &__heading {
@@ -233,10 +281,10 @@
     }
     &__img {
         width: 100%;
-        padding-top: $mobile-component-p;
+        margin-top: $mobile-component-p;
         @include tablet {
             width: 32%;
-            padding-top: $desktop-component-p;
+            margin-top: $desktop-component-p;
         }
     }
 }
@@ -246,46 +294,51 @@
 .footer{
     background: $bandsite-black;
     color: $bandsite-white;
+    margin-top: $mobile-component-p;
     &__wrapper{
-        border: 1px solid red;
-
         width: 70%;
         padding: 0 $mobile-component-p $mobile-component-p;
         display: flex;
         flex-direction: column;
         @include tablet {
+            margin-top: $desktop-headline-p-top;
             width: 100%;
             padding: $desktop-headline-p-top $desktop-component-p $desktop-component-p;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
         }
+        @include desktop {
+            justify-content: flex-start;
+            padding: $desktop-headline-p-top $desktop-wider-p $desktop-component-p;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
     }
     &__heading {
-        border: 1px solid red;
         font-size: $mobile-section-header-size;
         line-height: $mobile-section-header-lh;
         font-weight: $font-bold;
-        padding-top: $mobile-headline-p-top;
         @include tablet {
             font-size: $desktop-section-header-size;
             line-height: $desktop-section-header-lh;
             font-weight: $font-bold;
-            padding-top: $desktop-headline-p-top;
             width: 33%;
+        }
+        @include desktop {
+            width: 25%;
         }
         }
     &__social-icons{
-        border: 1px solid red;
-        padding-top: $mobile-headline-p-top;
         width: 40%;
         display: flex;
         justify-content: space-between;
         @include tablet {
             width: 33%;
             justify-content: flex-start;
-            padding-top: $desktop-headline-p-top;
-
+        }
+        @include desktop {
+            width: 25%;
         }
     }
     &__social-icon{
@@ -298,24 +351,19 @@
         }
     }
     &__logo {
-        border: 1px solid red;
         order: 1;
-        padding-top: $mobile-component-px2;
         @include tablet {
             order: 0;
             width: 33%;
             display: flex;
             justify-content: flex-end;
             align-content: center;
-            padding-top: $desktop-headline-p-top;
         }
         @include desktop {
+            width: 50%;
         }
     }
-    // &__logo-img {
-    // }
     &__contact-card {
-        border: 1px solid red;
         padding: $mobile-component-p 0 0;
         height: 9rem;
         display: flex;
@@ -325,15 +373,18 @@
             width: 33%;
             height: 10rem;
         }
+        @include desktop {
+            width: 25%;
+        }
     }
     &__copyright{
-        border: 1px solid red;
         order: 2;
         padding-top: $mobile-component-p;
         @include tablet {
             order: 0;
-            flex-grow: 1;
+            width: 100%;
             padding-top: $desktop-component-p;
+            align-self: flex-end;
         }
     }
     &__copy{
@@ -346,6 +397,15 @@
         &--name{
             font-weight: $font-demi;
         }
+        &--link{
+            font-size: $mobile-footer-copy-size;
+            line-height: $mobile-footer-copy-lh;
+            text-decoration: none;
+            color: $bandsite-white;
+            @include tablet {
+                font-size: $desktop-footer-copy-size;
+                line-height: $desktop-footer-copy-lh;
+            }
+        }
     }
-
 }
