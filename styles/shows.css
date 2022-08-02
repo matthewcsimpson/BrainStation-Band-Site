@@ -1,1 +1,329 @@
-/*# sourceMappingURL=shows.css.map */
+@font-face {
+  font-family: "Avenir-Next";
+  src: url(/assets/fonts/AvenirNextLTPro-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-Next";
+  src: url(/assets/fonts/AvenirNextLTPro-Bold.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-Next";
+  src: url(/assets/fonts/AvenirNextLTPro-Demi.otf);
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Avenir-Next";
+}
+
+.header {
+  background: #323232;
+  color: #FFFFFF;
+}
+.header__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .header__wrapper {
+    flex-direction: row;
+    width: 50%;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1280px) {
+  .header__wrapper {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+.header__logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .header__logo {
+    width: 40%;
+    justify-content: left;
+    padding: 1.625rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header__logo {
+    padding-left: 5rem;
+    width: 25%;
+  }
+}
+.header__logo-img {
+  height: 1.25rem;
+  width: 7.5rem;
+}
+.header__nav {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .header__nav {
+    width: 50%;
+  }
+}
+@media (min-width: 1280px) {
+  .header__nav {
+    width: 30%;
+  }
+}
+.header__nav-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+@media (min-width: 1280px) {
+  .header__nav-list {
+    justify-content: flex-start;
+  }
+}
+.header__nav-item {
+  width: 49%;
+  list-style: none;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .header__nav-item {
+    font-size: 0.875rem;
+    margin: 0 1.625rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header__nav-item {
+    width: 20%;
+  }
+}
+.header__nav-link {
+  width: 100%;
+  display: inline-block;
+  color: #E1E1E1;
+  text-decoration: none;
+  padding: 1rem 0;
+}
+@media (min-width: 768px) {
+  .header__nav-link {
+    padding: 1.625rem 0;
+  }
+}
+.header__nav-link--active {
+  font-weight: 600;
+  color: #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+}
+.header__nav-link:hover {
+  color: #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+.hero {
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__wrapper {
+  min-height: 50vw;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .hero__wrapper {
+    padding: 0 1.625rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__wrapper {
+    padding: 0 5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+.hero__page-heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .hero__page-heading {
+    font-size: 3.75rem;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+  }
+}
+
+.footer {
+  background: #323232;
+  color: #FFFFFF;
+  margin-top: 1rem;
+}
+.footer__wrapper {
+  width: 70%;
+  padding: 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .footer__wrapper {
+    margin-top: 3rem;
+    width: 100%;
+    padding: 3rem 1.625rem 1.625rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__wrapper {
+    justify-content: flex-start;
+    padding: 3rem 5rem 1.625rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+.footer__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .footer__heading {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    width: 33%;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__heading {
+    width: 25%;
+  }
+}
+.footer__social-icons {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .footer__social-icons {
+    width: 33%;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__social-icons {
+    width: 25%;
+  }
+}
+.footer__social-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media (min-width: 768px) {
+  .footer__social-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-right: 2rem;
+  }
+}
+.footer__logo {
+  order: 1;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    order: 0;
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__logo {
+    width: 50%;
+  }
+}
+.footer__contact-card {
+  padding: 1rem 0 0;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .footer__contact-card {
+    width: 33%;
+    height: 10rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__contact-card {
+    width: 25%;
+  }
+}
+.footer__copyright {
+  order: 2;
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__copyright {
+    order: 0;
+    width: 100%;
+    padding-top: 1.625rem;
+    align-self: flex-end;
+  }
+}
+.footer__copy {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+@media (min-width: 768px) {
+  .footer__copy {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+.footer__copy--name {
+  font-weight: 600;
+}
+.footer__copy--link {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .footer__copy--link {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}/*# sourceMappingURL=shows.css.map */
