@@ -36,8 +36,6 @@ body {
 
 // Header/Nav Section -------------------------
 
-
-
 .header {
     background: $bandsite-black;
     color: $bandsite-white;  
@@ -132,43 +130,7 @@ body {
         }
     }
 }
-// Hero Section -------------------------
 
-.hero {
-    background: linear-gradient(rgba(50,50,50, .5), rgba(50,50,50,0.5)), url(../assets/images/hero-bio.jpg); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    &__wrapper {
-        min-height: 50vw;
-        padding: 0 $mobile-component-p;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        @include tablet {
-            padding: 0 $desktop-component-p;
-        }
-        @include desktop {
-            padding: 0 $desktop-wider-p;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-    }
-    &__page-heading {
-        font-size: $mobile-page-header-size;
-        line-height: $mobile-page-header-lh;
-        font-weight: $font-bold;
-        color: $bandsite-white;
-        @include tablet {
-            font-size: $desktop-page-header-size;
-            font-size: $desktop-page-header-size;
-            line-height: $desktop-page-header-lh;
-            font-weight: $font-bold;
-        }
-
-    }
-}
 
 
 // Footer Section -------------------------
