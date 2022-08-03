@@ -2,8 +2,6 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 
-
-
 .shows-hero {
     background: linear-gradient(rgba(50,50,50, .5), rgba(50,50,50,0.5)), url(../assets/images/hero-shows.jpg); 
     background-size: cover;
@@ -13,18 +11,32 @@
         min-height: 50vw;
         padding: 0 $mobile-component-p;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        // justify-content: center;
         @include tablet {
             padding: 0 $desktop-component-p;
+            justify-content: center;
         }
         @include desktop {
             padding: 0 $desktop-wider-p;
+            flex-direction: row;
             max-width: 1280px;
             margin: 0 auto;
         }
     }
     &__page-heading {
+        font-size: $mobile-subheader-size;
+        line-height: $mobile-subheader-lh;
+        font-weight: $font-demi;
+        color: $bandsite-white;
+        @include tablet {
+            font-size: $desktop-subheader-size;
+            font-size: $desktop-subheader-size;
+            line-height: $desktop-page-header-lh;
+            font-weight: $font-demi;
+        }
+    }
+    &__album-title {
         font-size: $mobile-page-header-size;
         line-height: $mobile-page-header-lh;
         font-weight: $font-bold;
@@ -35,7 +47,6 @@
             line-height: $desktop-page-header-lh;
             font-weight: $font-bold;
         }
-
     }
     &__left {
         flex-basis: 50%;

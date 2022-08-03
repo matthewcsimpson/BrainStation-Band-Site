@@ -297,28 +297,45 @@ body {
   min-height: 50vw;
   padding: 0 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 @media (min-width: 768px) {
   .shows-hero__wrapper {
     padding: 0 1.625rem;
+    justify-content: center;
   }
 }
 @media (min-width: 1280px) {
   .shows-hero__wrapper {
     padding: 0 5rem;
+    flex-direction: row;
     max-width: 1280px;
     margin: 0 auto;
   }
 }
 .shows-hero__page-heading {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .shows-hero__page-heading {
+    font-size: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 4.25rem;
+    font-weight: 600;
+  }
+}
+.shows-hero__album-title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
   color: #FFFFFF;
 }
 @media (min-width: 768px) {
-  .shows-hero__page-heading {
+  .shows-hero__album-title {
     font-size: 3.75rem;
     font-size: 3.75rem;
     line-height: 4.25rem;
