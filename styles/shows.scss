@@ -1,6 +1,7 @@
 @use './partials/global' as *;
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
+@use './partials/fontface' as *;
 
 .shows-hero {
     background: linear-gradient(rgba(50,50,50, .5), rgba(50,50,50,0.5)), url(../assets/images/hero-shows.jpg); 
@@ -14,7 +15,6 @@
         flex-direction: column;
         @include tablet {
             padding: 0 $desktop-component-p;
-            // justify-content: center;
         }
         @include desktop {
             padding: 0 $desktop-wider-p;
