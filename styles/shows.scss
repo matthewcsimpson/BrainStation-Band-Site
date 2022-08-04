@@ -12,14 +12,14 @@
         padding: 0 $mobile-component-p;
         display: flex;
         flex-direction: column;
-        align-items: center;
         @include tablet {
             padding: 0 $desktop-component-p;
-            justify-content: center;
+            // justify-content: center;
         }
         @include desktop {
             padding: 0 $desktop-wider-p;
             flex-direction: row;
+            align-items: center;
             max-width: 1280px;
             margin: 0 auto;
         }
@@ -55,5 +55,50 @@
     &__right{
         flex-basis: 50%;
         padding: $mobile-component-p;
+        @include tablet {
+            width: 49%;
+            align-self: stretch;
+        }
+        @include desktop {
+            align-self: center;
+        }
     }
+}
+
+.shows {
+    &__wrapper {
+        padding: 0 1rem;
+        @include tablet {
+            padding: 0 $desktop-component-p;
+        }
+        @include desktop {
+            padding: 0 $desktop-wider-p;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+    }
+    &__heading{
+        font-size: $mobile-section-header-size;
+        line-height: $mobile-section-header-lh;
+        font-weight: $font-bold;
+        padding-top: $mobile-headline-p-top;
+        @include tablet {
+            font-size: $desktop-section-header-size;
+            line-height: $desktop-section-header-lh;
+            font-weight: $font-bold;
+            padding-top: $desktop-headline-p-top;
+        }
+    }
+
+    &__list{
+        list-style: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
 }
