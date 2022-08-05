@@ -415,5 +415,15 @@ body {
 }
 .shows__item {
   border: 1px solid yellow;
-  width: 20%;
+  width: 100%;
+}
+.shows__button {
+  border-radius: 4px;
+  height: 2.5rem;
+  width: 100%;
+  background-color: #323232;
+  color: #FFFFFF;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
 }/*# sourceMappingURL=shows.css.map */
