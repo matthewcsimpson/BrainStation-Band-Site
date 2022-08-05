@@ -58,8 +58,9 @@ showsData.forEach((show) => {
   // create the buy tickets button
   const showBuyTicketsLi = document.createElement("li");
   const showBuyTicketsButton = document.createElement("button");
-  showBuyTicketsLi.classList.add("shows__item", "shows__item--buytickets");
-  showBuyTicketsButton.setAttribute("id", `${show.date}-${show.venue}`);
+  showBuyTicketsLi.classList.add("shows__item", "shows__item--buy");
+  showBuyTicketsButton.classList.add("shows__button");
+  showBuyTicketsButton.setAttribute("name", `${show.date}-${show.venue}`);
   showBuyTicketsButton.innerText = "Buy Tickets";
   showBuyTicketsLi.appendChild(showBuyTicketsButton);
 
