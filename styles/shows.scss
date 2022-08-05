@@ -68,7 +68,7 @@
 .shows {
     // border:1px solid green;
     &__wrapper {
-        border:1px solid red;
+        // border:1px solid red;
         padding: 0 1rem;
         display: flex;
         flex-direction: column;
@@ -82,7 +82,7 @@
         }
     }
     &__heading{
-        border:1px solid purple;
+        // border:1px solid purple;
         font-size: $mobile-section-header-size;
         line-height: $mobile-section-header-lh;
         font-weight: $font-bold;
@@ -90,15 +90,12 @@
         @include tablet {
             font-size: $desktop-section-header-size;
             line-height: $desktop-section-header-lh;
-            font-weight: $font-bold;
             padding-top: $desktop-headline-p-top;
-        }
-        @include desktop {
-
         }
     }
     &__list{
-        border:1px solid blue;
+        border: 1px solid red;
+        border-bottom: 1px solid $bandsite-mercury;
         list-style: none;
         width: 100%;
         display: flex;
@@ -106,16 +103,43 @@
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
+            width: 100%;
         }
-        @include desktop{
-            flex-direction: row;
-            justify-content: flex-end;
-
+        &--colheadings {
+            display: none;
+            @include tablet {
+                display: flex;
+            }
+        }
+        &-element {
+            border: 1px solid green;
+            width: 100%;
+            padding: 1rem 0;
         }
     }
     &__item {
         border:1px solid yellow;
         width: 100%;
+        &--alwayshidden {
+            visibility: hidden;
+        }
+        &--itemheader {
+            color: $bandsite-silver;
+            font-size: $mobile-subheader-size;
+            line-height: $mobile-subheader-lh;
+            font-weight: $font-demi;
+            text-transform: uppercase;
+            @include tablet {
+                display: none;
+            }
+        }
+        &--text {
+            font-size: $mobile-body-copy-size;
+            line-height: $mobile-body-copy-lh;        
+        }
+        &--bold {
+            font-weight: $font-demi;
+        }
     }
     &__button{
         border-radius: 4px;
@@ -126,6 +150,11 @@
         font-size: .625rem;
         line-height: 1.25rem;
         font-weight: $font-bold;
+        @include tablet {
+            min-width: 9.375rem;
+            max-width: 9.375rem;
+            padding: 0 2rem;
+        }
     }
 
 }

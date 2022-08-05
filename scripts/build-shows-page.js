@@ -40,28 +40,65 @@ showsData.forEach((show) => {
   showsList.classList.add("shows__list");
   showsListing.appendChild(showsList);
 
-  // create the name date li
+  // create the date li --------------------------
   const showDateLi = document.createElement("li");
-  showDateLi.classList.add("shows__item", "shows__item--date");
-  showDateLi.innerText = show.date;
+  showDateLi.classList.add("shows__list-element");
 
-  // create the venue li
+  const showDateHeader = document.createElement("p");
+  showDateHeader.classList.add("shows__item", "shows__item--itemheader");
+  showDateHeader.innerText = "Date";
+
+  const showDateP = document.createElement("p");
+  showDateP.classList.add(
+    "shows__item",
+    "shows__item--text",
+    "shows__item--bold"
+  );
+  showDateP.innerText = show.date;
+
+  showDateLi.appendChild(showDateHeader);
+  showDateLi.appendChild(showDateP);
+
+  // create the venue li --------------------------
   const showVenueLi = document.createElement("li");
-  showVenueLi.classList.add("shows__item", "shows__item--venue");
-  showVenueLi.innerText = show.venue;
+  showVenueLi.classList.add("shows__list-element");
+
+  const showVenueHeader = document.createElement("p");
+  showVenueHeader.classList.add("shows__item", "shows__item--itemheader");
+  showVenueHeader.innerText = "Venue";
+
+  const showVenueP = document.createElement("p");
+  showVenueP.classList.add("shows__item", "shows__item--text");
+  showVenueP.innerText = show.venue;
+
+  showVenueLi.appendChild(showVenueHeader);
+  showVenueLi.appendChild(showVenueP);
 
   // create the location li
   const showLocationLi = document.createElement("li");
-  showLocationLi.classList.add("shows__item", "shows__item--location");
-  showLocationLi.innerText = show.location;
+  showLocationLi.classList.add("shows__list-element");
+
+  const showLocationHeader = document.createElement("p");
+  showLocationHeader.classList.add("shows__item", "shows__item--itemheader");
+  showLocationHeader.innerText = "Location";
+
+  const showLocationP = document.createElement("p");
+  showLocationP.classList.add("shows__item", "shows__item--text");
+  showLocationP.innerText = show.location;
+
+  showLocationLi.appendChild(showLocationHeader);
+  showLocationLi.appendChild(showLocationP);
 
   // create the buy tickets button
   const showBuyTicketsLi = document.createElement("li");
-  const showBuyTicketsButton = document.createElement("button");
+  showBuyTicketsLi.classList.add("shows__list-element");
   showBuyTicketsLi.classList.add("shows__item", "shows__item--buy");
+
+  const showBuyTicketsButton = document.createElement("button");
   showBuyTicketsButton.classList.add("shows__button");
   showBuyTicketsButton.setAttribute("name", `${show.date}-${show.venue}`);
   showBuyTicketsButton.innerText = "Buy Tickets";
+
   showBuyTicketsLi.appendChild(showBuyTicketsButton);
 
   // append the date, venue, location, buy tickets lis to the ul.
