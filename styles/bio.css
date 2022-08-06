@@ -511,4 +511,48 @@ body {
     width: 32%;
     margin-top: 1.625rem;
   }
+}
+
+.conversation__wrapper {
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .conversation__wrapper {
+    padding: 1.625rem;
+  }
+}
+@media (min-width: 1280px) {
+  .conversation__wrapper {
+    padding: 0 5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+.conversation__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .conversation__heading {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding-top: 3rem;
+  }
+}
+.conversation__box {
+  border: 1px solid red;
+}
+.conversation__avatar {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  max-width: 2.25rem;
+  max-height: 2.25rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
 }/*# sourceMappingURL=bio.css.map */

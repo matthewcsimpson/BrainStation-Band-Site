@@ -195,3 +195,44 @@
     }
 }
 
+// Conversation Section -------------------------
+
+.conversation {
+    &__wrapper {
+        padding: $mobile-component-p;
+        @include tablet {
+            padding: $desktop-component-p;
+        }
+        @include desktop {
+            padding: 0 $desktop-wider-p;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+    }
+    &__heading{
+        font-size: $mobile-section-header-size;
+        line-height: $mobile-section-header-lh;
+        font-weight: $font-bold;
+        padding-top: $mobile-headline-p-top;
+        @include tablet {
+            font-size: $desktop-section-header-size;
+            line-height: $desktop-section-header-lh;
+            font-weight: $font-bold;
+            padding-top: $desktop-headline-p-top;
+        }
+    }
+    &__box {
+        border: 1px solid red;
+    }
+    &__avatar {
+        min-width: 2.25rem;
+        min-height: 2.25rem;
+        max-width: 2.25rem;
+        max-height: 2.25rem;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: left;
+    }
+
+
+}
