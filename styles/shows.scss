@@ -66,9 +66,7 @@
 }
 
 .shows {
-    // border:1px solid green;
     &__wrapper {
-        // border:1px solid red;
         padding: 0 1rem;
         display: flex;
         flex-direction: column;
@@ -82,7 +80,6 @@
         }
     }
     &__heading{
-        // border:1px solid purple;
         font-size: $mobile-section-header-size;
         line-height: $mobile-section-header-lh;
         font-weight: $font-bold;
@@ -94,7 +91,6 @@
         }
     }
     &__list{
-        border: 1px solid red;
         border-bottom: 1px solid $bandsite-mercury;
         list-style: none;
         width: 100%;
@@ -109,17 +105,28 @@
             display: none;
             @include tablet {
                 display: flex;
+                font-size: $desktop-body-copy-size;
+                font-weight: $font-demi;
+                color: $bandsite-silver;
+                border-bottom: 0;
+                padding-top: 2rem;
             }
         }
         &-element {
-            border: 1px solid green;
             width: 100%;
             padding: 1rem 0;
         }
     }
     &__item {
-        border:1px solid yellow;
         width: 100%;
+        @include tablet {
+            align-self: center;
+            padding: 0;
+            margin: 0;
+        }
+        @include desktop {
+            max-width: 80%;
+        }
         &--alwayshidden {
             visibility: hidden;
         }
@@ -147,13 +154,15 @@
         width: 100%;
         background-color: $bandsite-black;
         color: $bandsite-white;
-        font-size: .625rem;
-        line-height: 1.25rem;
+        font-size: $mobile-buttons-size;
+        line-height: $mobile-buttons-lh;
         font-weight: $font-bold;
         @include tablet {
             min-width: 9.375rem;
             max-width: 9.375rem;
             padding: 0 2rem;
+            font-size: $desktop-buttons-size;
+            line-height: $desktop-buttons-lh;
         }
     }
 
