@@ -336,6 +336,7 @@ body {
   }
 }
 .shows-hero__album-title {
+  border: 1px solid red;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -350,21 +351,24 @@ body {
   }
 }
 .shows-hero__left {
+  border: 1px solid magenta;
   flex-basis: 50%;
   padding: 1rem;
 }
 .shows-hero__right {
+  border: 1px solid chartreuse;
   flex-basis: 50%;
   padding: 1rem;
 }
 @media (min-width: 768px) {
   .shows-hero__right {
-    width: 49%;
+    max-width: 600px;
     align-self: stretch;
   }
 }
 @media (min-width: 1280px) {
   .shows-hero__right {
+    width: 50%;
     align-self: center;
   }
 }

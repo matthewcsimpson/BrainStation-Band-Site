@@ -37,6 +37,7 @@
         }
     }
     &__album-title {
+        border: 1px solid red;
         font-size: $mobile-page-header-size;
         line-height: $mobile-page-header-lh;
         font-weight: $font-bold;
@@ -49,17 +50,22 @@
         }
     }
     &__left {
-        flex-basis: 50%;
-        padding: $mobile-component-p;
-    }
-    &__right{
+        border: 1px solid magenta;
         flex-basis: 50%;
         padding: $mobile-component-p;
         @include tablet {
-            width: 49%;
+        }
+    }
+    &__right{
+        border: 1px solid chartreuse;
+        flex-basis: 50%;
+        padding: $mobile-component-p;
+        @include tablet {
+            max-width: 600px;
             align-self: stretch;
         }
         @include desktop {
+            width: 50%;
             align-self: center;
         }
     }
