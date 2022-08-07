@@ -102,6 +102,19 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        &--shows{
+            &:hover {
+            background-color: $bandsite-alabaster;
+            }
+        }
+        &--selected {
+            background-color: $bandsite-mercury;
+            &:hover {
+                background-color: $bandsite-mercury;
+
+            }
+        }
+
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
@@ -154,22 +167,4 @@
             font-weight: $font-demi;
         }
     }
-    &__button{
-        border-radius: 4px;
-        height: 2.5rem;
-        width: 100%;
-        background-color: $bandsite-black;
-        color: $bandsite-white;
-        font-size: $mobile-buttons-size;
-        line-height: $mobile-buttons-lh;
-        font-weight: $font-bold;
-        @include tablet {
-            min-width: 9.375rem;
-            max-width: 9.375rem;
-            padding: 0 2rem;
-            font-size: $desktop-buttons-size;
-            line-height: $desktop-buttons-lh;
-        }
-    }
-
 }

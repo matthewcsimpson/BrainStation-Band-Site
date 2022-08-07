@@ -241,3 +241,24 @@ body {
         }
     }
 }
+
+.bs-button {
+    border-radius: 4px;
+    height: 2.5rem;
+    width: 100%;
+    background-color: $bandsite-black;
+    color: $bandsite-white;
+    font-size: $mobile-buttons-size;
+    line-height: $mobile-buttons-lh;
+    font-weight: $font-bold;
+    &:hover{
+        background-color: $bandsite-darkblack;
+    }
+    @include tablet {
+        min-width: 9.375rem;
+        max-width: 9.375rem;
+        padding: 0 2rem;
+        font-size: $desktop-buttons-size;
+        line-height: $desktop-buttons-lh;
+    }
+}

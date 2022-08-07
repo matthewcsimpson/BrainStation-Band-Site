@@ -37,7 +37,7 @@ const showsListing = document.querySelector(".shows__listing");
 showsData.forEach((show) => {
   // create the ul and append it to the surrounding div
   const showsList = document.createElement("ul");
-  showsList.classList.add("shows__list");
+  showsList.classList.add("shows__list", "shows__list--shows");
   showsListing.appendChild(showsList);
 
   // create the date li --------------------------
@@ -95,11 +95,19 @@ showsData.forEach((show) => {
   showBuyTicketsLi.classList.add("shows__item", "shows__item--buy");
 
   const showBuyTicketsButton = document.createElement("button");
-  showBuyTicketsButton.classList.add("shows__button");
+  showBuyTicketsButton.classList.add("bs-button");
   showBuyTicketsButton.setAttribute("name", `${show.date}-${show.venue}`);
   showBuyTicketsButton.innerText = "Buy Tickets";
 
   showBuyTicketsLi.appendChild(showBuyTicketsButton);
+
+  showsList.addEventListener("click", (e) => {
+    const selectedShow = document.querySelector(".shows__list--selected");
+    if (selectedShow) {
+      selectedShow.classList.remove("shows__list--selected");
+    }
+    e.currentTarget.classList.add("shows__list--selected");
+  });
 
   // append the date, venue, location, buy tickets lis to the ul.
   showsList.appendChild(showDateLi);

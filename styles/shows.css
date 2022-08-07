@@ -295,6 +295,29 @@ body {
   }
 }
 
+.bs-button {
+  border-radius: 4px;
+  height: 2.5rem;
+  width: 100%;
+  background-color: #323232;
+  color: #FFFFFF;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+.bs-button:hover {
+  background-color: #000000;
+}
+@media (min-width: 768px) {
+  .bs-button {
+    min-width: 9.375rem;
+    max-width: 9.375rem;
+    padding: 0 2rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+
 .shows-hero {
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
   background-size: cover;
@@ -410,6 +433,15 @@ body {
   display: flex;
   flex-direction: column;
 }
+.shows__list--shows:hover {
+  background-color: #FAFAFA;
+}
+.shows__list--selected {
+  background-color: #E1E1E1;
+}
+.shows__list--selected:hover {
+  background-color: #E1E1E1;
+}
 @media (min-width: 768px) {
   .shows__list {
     flex-direction: row;
@@ -470,23 +502,4 @@ body {
 }
 .shows__item--bold {
   font-weight: 600;
-}
-.shows__button {
-  border-radius: 4px;
-  height: 2.5rem;
-  width: 100%;
-  background-color: #323232;
-  color: #FFFFFF;
-  font-size: 0.625rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-}
-@media (min-width: 768px) {
-  .shows__button {
-    min-width: 9.375rem;
-    max-width: 9.375rem;
-    padding: 0 2rem;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-  }
 }/*# sourceMappingURL=shows.css.map */
