@@ -542,12 +542,14 @@ body {
 }
 @media (min-width: 768px) {
   .conversation__wrapper {
-    padding: 1.625rem;
+    padding: 0 1.625rem;
   }
 }
 @media (min-width: 1280px) {
   .conversation__wrapper {
     padding: 0 5rem;
+    max-width: 1280px;
+    margin: 0 auto;
   }
 }
 .conversation__comments {

@@ -234,11 +234,13 @@
         padding: $mobile-component-p;
 
         @include tablet {
-            padding: $desktop-component-p;
+            padding: 0 $desktop-component-p;
         }
 
         @include desktop {
             padding: 0 $desktop-wider-p;
+            max-width: 1280px;
+            margin: 0 auto;
         }
     }
 

@@ -4,18 +4,21 @@
 @use './partials/fontface' as *;
 
 .shows-hero {
-    background: linear-gradient(rgba(50,50,50, .5), rgba(50,50,50,0.5)), url(../assets/images/hero-shows.jpg); 
+    background: linear-gradient(rgba(50, 50, 50, .5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     &__wrapper {
         min-height: 50vw;
         padding: 0 $mobile-component-p;
         display: flex;
         flex-direction: column;
+
         @include tablet {
             padding: 0 $desktop-component-p;
         }
+
         @include desktop {
             padding: 0 $desktop-wider-p;
             flex-direction: row;
@@ -24,11 +27,13 @@
             margin: 0 auto;
         }
     }
+
     &__page-heading {
         font-size: $mobile-subheader-size;
         line-height: $mobile-subheader-lh;
         font-weight: $font-demi;
         color: $bandsite-white;
+
         @include tablet {
             font-size: $desktop-subheader-size;
             font-size: $desktop-subheader-size;
@@ -36,12 +41,13 @@
             font-weight: $font-demi;
         }
     }
+
     &__album-title {
-        border: 1px solid red;
         font-size: $mobile-page-header-size;
         line-height: $mobile-page-header-lh;
         font-weight: $font-bold;
         color: $bandsite-white;
+
         @include tablet {
             font-size: $desktop-page-header-size;
             font-size: $desktop-page-header-size;
@@ -49,21 +55,23 @@
             font-weight: $font-bold;
         }
     }
+
     &__left {
-        border: 1px solid magenta;
         flex-basis: 50%;
         padding: $mobile-component-p;
-        @include tablet {
-        }
+
+        @include tablet {}
     }
-    &__right{
-        border: 1px solid chartreuse;
+
+    &__right {
         flex-basis: 50%;
         padding: $mobile-component-p;
+
         @include tablet {
             max-width: 600px;
             align-self: stretch;
         }
+
         @include desktop {
             width: 50%;
             align-self: center;
@@ -72,43 +80,56 @@
 }
 
 .shows {
+    border: 1px solid red;
+
     &__wrapper {
+        border: 1px solid green;
         padding: 0 1rem;
         display: flex;
         flex-direction: column;
+
         @include tablet {
             padding: 0 $desktop-component-p;
+
         }
+
         @include desktop {
             padding: 0 $desktop-wider-p;
             max-width: 1280px;
             margin: 0 auto;
         }
     }
-    &__heading{
+
+    &__heading {
         font-size: $mobile-section-header-size;
         line-height: $mobile-section-header-lh;
         font-weight: $font-bold;
         padding-top: $mobile-headline-p-top;
+
         @include tablet {
             font-size: $desktop-section-header-size;
             line-height: $desktop-section-header-lh;
             padding-top: $desktop-headline-p-top;
         }
     }
-    &__list{
+
+    &__list {
+        border: 1px solid orange;
         border-bottom: 1px solid $bandsite-mercury;
         list-style: none;
         width: 100%;
         display: flex;
         flex-direction: column;
-        &--shows{
+
+        &--shows {
             &:hover {
-            background-color: $bandsite-alabaster;
+                background-color: $bandsite-alabaster;
             }
         }
+
         &--selected {
             background-color: $bandsite-mercury;
+
             &:hover {
                 background-color: $bandsite-mercury;
 
@@ -118,10 +139,13 @@
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
-            width: 100%;
+            max-width: 80%;
+            margin: 0 0 0 auto;
         }
+
         &--colheadings {
             display: none;
+
             @include tablet {
                 display: flex;
                 font-size: $desktop-body-copy-size;
@@ -131,38 +155,47 @@
                 padding-top: 2rem;
             }
         }
+
         &-element {
             width: 100%;
             padding: 1rem 0;
         }
     }
+
     &__item {
         width: 100%;
+
         @include tablet {
             align-self: center;
             padding: 0;
             margin: 0;
         }
+
         @include desktop {
             max-width: 80%;
         }
+
         &--alwayshidden {
             visibility: hidden;
         }
+
         &--itemheader {
             color: $bandsite-silver;
             font-size: $mobile-subheader-size;
             line-height: $mobile-subheader-lh;
             font-weight: $font-demi;
             text-transform: uppercase;
+
             @include tablet {
                 display: none;
             }
         }
+
         &--text {
             font-size: $mobile-body-copy-size;
-            line-height: $mobile-body-copy-lh;        
+            line-height: $mobile-body-copy-lh;
         }
+
         &--bold {
             font-weight: $font-demi;
         }
