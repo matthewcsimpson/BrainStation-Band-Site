@@ -341,11 +341,14 @@
         border-radius: 4px;
         padding: $mobile-component-p;
 
-
         &--comment {
             min-height: 4.5rem;
             font-family: $bandsite-font;
             vertical-align: middle;
+        }
+
+        &:invalid:required {
+            border: 1px solid $bandsite-formerror;
         }
 
         &:active {

@@ -22,14 +22,24 @@ const comments = [
   },
 ];
 
+/**
+ * Sort all available comments by the date they were made
+ * sort oldest to newest.
+ */
 comments.sort((a, b) => {
   return a.date - b.date;
 });
 
-// console.log(comments);
-
+/**
+ * The DOM element that will function as the parent element for the comment list.
+ */
 const commentList = document.querySelector(".conversation__comments");
 
+/**
+ * functon that accepts a comment object and
+ * builds a DOM element using the data contained therein.
+ * @param {object} commentData
+ */
 const displayComment = (commentData) => {
   // create the box
   const commentBox = document.createElement("div");
@@ -103,41 +113,49 @@ const displayComment = (commentData) => {
   commentList.appendChild(commentBox);
 };
 
-// load all existing comments
+/**
+ * Function which accepts an array of comments,
+ * and then calls display comment on each one to display them.
+ * @param {array} commentsArray
+ */
 const loadComments = (commentsArray) => {
+  console.log("LOADING");
   commentsArray.forEach((comment) => {
     displayComment(comment);
   });
 };
 
-// load the comments.
+/**
+ * Function to clear all child elements from a specified DOM object.
+ * @param {DOM Element} element
+ */
+const unloadComments = (element) => {
+  console.log("UNLOADING");
+  while (element.hasChildNodes()) {
+    element.removeChild(element.firstChild);
+  }
+};
+
+/**
+ * call the function to load the comments on initial page load
+ */
 loadComments(comments);
 
-const newComment = document.querySelector(".conversation__form");
-
-newComment.addEventListener("submit", (e) => {
+/**
+ * event listener to grab form data, convert to a comments object,
+ * push that object into the comments array, and then load the comments.
+ */
+const commentForm = document.querySelector(".conversation__form");
+commentForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const incomingComment = {
     name: e.target.name.value,
     comment: e.target.comment.value,
     date: Date.now(),
     avatar: null,
   };
-
-  console.log(incomingComment);
-
-  if (!incomingComment.name) {
-    alert("Name is required!");
-    return;
-  }
-
-  if (!incomingComment.comment) {
-    alert("You have to write something!");
-    return;
-  }
-
   comments.push(incomingComment);
-
+  unloadComments(commentList);
   loadComments(comments);
+  commentForm.reset();
 });

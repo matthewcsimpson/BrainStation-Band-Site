@@ -644,6 +644,9 @@ body {
   font-family: "Avenir-Next";
   vertical-align: middle;
 }
+.conversation__input:invalid:required {
+  border: 1px solid #D22D2D;
+}
 .conversation__input:active {
   border: 1px solid #323232;
 }/*# sourceMappingURL=bio.css.map */
