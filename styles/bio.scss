@@ -291,8 +291,19 @@
 
         &--right {
             width: 100%;
-            display: flex;
-            flex-direction: column;
+            // display: flex;
+            // flex-direction: column;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        &--button {
+            @include tablet {
+                align-self: flex-end;
+            }
         }
     }
 
