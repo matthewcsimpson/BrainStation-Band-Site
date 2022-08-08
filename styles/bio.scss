@@ -239,9 +239,12 @@
 
         @include desktop {
             padding: 0 $desktop-wider-p;
-            max-width: 768px;
-            margin: 0 auto;
         }
+    }
+
+    &__comments {
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     &__heading {
@@ -265,14 +268,19 @@
         max-height: 2.25rem;
         border-radius: 50%;
         background-color: $bandsite-mercury;
-
-        &--userImage {}
     }
 
     &__box {
         display: flex;
         border-bottom: 1px solid $bandsite-mercury;
-        padding-bottom: $mobile-component-p;
+        padding: $mobile-component-p 0;
+        width: 100%;
+
+        @include tablet {
+            max-width: 768px;
+            padding: $desktop-component-p 0;
+            margin: 0 auto;
+        }
 
         &--left {
             width: 3.5rem;
@@ -288,8 +296,12 @@
         }
     }
 
+    &__details {
+        display: flex;
+        justify-content: space-between;
+    }
 
-    &__input-label {
+    &__label {
         text-transform: uppercase;
         font-size: $mobile-buttons-size;
         font-weight: $font-demi;
@@ -297,10 +309,29 @@
         width: 100%;
         display: inline-block;
 
+        @include tablet {
+            font-size: $desktop-buttons-size;
+        }
+
         &--avatar {
             visibility: hidden;
         }
 
+        &--name {
+            color: $bandsite-black;
+        }
+
+    }
+
+    &__text {
+        font-size: $mobile-body-copy-size;
+        line-height: $mobile-body-copy-lh;
+
+        @include tablet {
+            font-size: $desktop-body-copy-size;
+            line-height: $desktop-body-copy-lh;
+
+        }
     }
 
     &__input {

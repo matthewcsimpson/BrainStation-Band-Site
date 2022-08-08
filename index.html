@@ -98,28 +98,31 @@
         <section class="conversation">
             <div class="conversation__wrapper">
                 <h2 class="conversation__heading">Join the Conversation</h2>
-                <div class="conversation__box">
+                <div class="conversation__box conversation__box--form">
                     <div class="conversation__box--left">
-                        <p class="conversation__input-label conversation__input-label--avatar">Avatar</p>
+                        <p class="conversation__label conversation__label--avatar">Avatar</p>
                         <div class="conversation__avatar">
                             <img src="./assets/images/Mohan-muruge.jpg" alt=""
                                 class="conversation__avatar conversation__avatar--userimage" />
                         </div>
                     </div>
                     <div class="conversation__box--right">
-                        <form action="" class="conversation__form">
-                            <label for="name" class="conversation__input-label">Name</label>
+                        <form class="conversation__form">
+                            <label for="name" class="conversation__label">Name</label>
                             <input type="text" name="name" id="name" placeholder="Enter your name..."
                                 class="conversation__input conversation__input--name">
-                            <label for="comment" class="conversation__input-label">Comment:</label>
+                            <label for="comment" class="conversation__label">Comment:</label>
                             <textarea name="comment" id="comment" placeholder="Add a new comment"
                                 class="conversation__input conversation__input--comment"></textarea>
-                            <button class="bs-button">Comment</button>
+                            <button type="submit" class="bs-button">Comment</button>
                         </form>
                     </div>
                 </div>
+                <div class="conversation__comments">
 
+                    <!-- generated comments go here. -->
 
+                </div>
             </div>
         </section>
 
@@ -185,6 +188,7 @@
             </div>
         </footer>
     </div>
+    <script src="./scripts/index-page.js"></script>
 </body>
 
 </html>
