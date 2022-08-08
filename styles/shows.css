@@ -394,11 +394,7 @@ body {
   }
 }
 
-.shows {
-  border: 1px solid red;
-}
 .shows__wrapper {
-  border: 1px solid green;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -429,7 +425,6 @@ body {
   }
 }
 .shows__list {
-  border: 1px solid orange;
   border-bottom: 1px solid #E1E1E1;
   list-style: none;
   width: 100%;

@@ -80,10 +80,8 @@
 }
 
 .shows {
-    border: 1px solid red;
 
     &__wrapper {
-        border: 1px solid green;
         padding: 0 1rem;
         display: flex;
         flex-direction: column;
@@ -114,7 +112,6 @@
     }
 
     &__list {
-        border: 1px solid orange;
         border-bottom: 1px solid $bandsite-mercury;
         list-style: none;
         width: 100%;
