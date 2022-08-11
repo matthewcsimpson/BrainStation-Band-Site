@@ -35,7 +35,9 @@ const displayShow = (show) => {
   );
 
   const showDateData = new Date(show.date);
-  showDateP.innerText = showDateData.toLocaleDateString("en-US");
+  const dateOptions = { day: "2-digit", month: "2-digit", year: "numeric" };
+
+  showDateP.innerText = showDateData.toLocaleDateString("en-US", dateOptions);
 
   showDateLi.appendChild(showDateHeader);
   showDateLi.appendChild(showDateP);
@@ -87,6 +89,7 @@ const displayShow = (show) => {
   showsList.appendChild(showLocationLi);
   showsList.appendChild(showBuyTicketsLi);
 
+  // listen to the the created UL DOM element in order to mark it selected when clicked on.
   showsList.addEventListener("click", (e) => {
     const selectedShow = document.querySelector(".shows__list--selected");
     if (selectedShow) {
@@ -96,13 +99,22 @@ const displayShow = (show) => {
   });
 };
 
+/**
+ * Function to load show data from the remote server.
+ */
 const loadRemoteShows = () => {
   axios.get(`${API_BASEURL}showdates${API_KEY}`).then((response) => {
     let showData = response.data;
+    showData.sort((a, b) => {
+      return a.date - b.date; // sort the show data by date just in case.
+    });
     showData.forEach((show) => {
       displayShow(show);
     });
   });
 };
 
+/**
+ * call the function to load show data when the page loads.
+ */
 loadRemoteShows();

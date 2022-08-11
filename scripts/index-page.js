@@ -3,7 +3,6 @@
 /**
  * API DETAILS
  */
-
 const API_KEY = "?api_key=bd6be8d0-bde7-4b66-848d-bccaa5394a3a";
 const API_BASEURL = "https://project-1-api.herokuapp.com/";
 
@@ -32,7 +31,6 @@ const displayComment = (commentData) => {
     "conversation__label--avatar"
   );
   commentsAvatarLabel.innerText = "Avatar";
-
   const commentsAvatar = document.createElement("div");
   commentsAvatar.classList.add("conversation__avatar");
 
@@ -63,8 +61,11 @@ const displayComment = (commentData) => {
   );
 
   const commentDateDate = new Date(commentData.timestamp);
-
-  commenterDateP.innerText = commentDateDate.toLocaleDateString("en-US");
+  const dateOptions = { day: "2-digit", month: "2-digit", year: "numeric" };
+  commenterDateP.innerText = commentDateDate.toLocaleDateString(
+    "en-US",
+    dateOptions
+  );
   commenterDate.appendChild(commenterDateP);
 
   // comment text
@@ -95,7 +96,6 @@ const displayComment = (commentData) => {
  * @param {array} commentsArray
  */
 const loadComments = (commentsArray) => {
-  console.info("LOADING COMMENTS");
   commentsArray.forEach((comment) => {
     displayComment(comment);
   });
@@ -106,7 +106,6 @@ const loadComments = (commentsArray) => {
  * @param {DOM Element} element
  */
 const unloadComments = (element) => {
-  console.info("UNLOADING COMMENTS");
   while (element.hasChildNodes()) {
     element.removeChild(element.firstChild);
   }
@@ -130,9 +129,13 @@ const loadRemote = () => {
     });
 };
 
+/**
+ * Function to post a comment to the remote server.
+ * @param {Object} comment
+ */
 const postRemote = (comment) => {
   axios.post(`${API_BASEURL}comments${API_KEY}`, comment).then((response) => {
-    console.log(response);
+    console.info(response); // leaving this in for now.
   });
 };
 
@@ -143,13 +146,6 @@ const postRemote = (comment) => {
 const commentForm = document.querySelector(".conversation__form");
 commentForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  // const incomingComment = {
-  //   name: e.target.name.value,
-  //   comment: e.target.comment.value,
-  //   date: Date.now(),
-  //   avatar: null,
-  // };
-
   const incomingComment = {
     name: `${e.target.name.value}`,
     comment: `${e.target.comment.value}`,
