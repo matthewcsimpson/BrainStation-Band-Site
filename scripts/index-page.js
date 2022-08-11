@@ -113,31 +113,11 @@ const unloadComments = (element) => {
 };
 
 /**
- * event listener to grab form data, convert to a comments object,
- * push that object into the comments array, and then load the comments.
+ * function to load comments from remote server.
  */
-const commentForm = document.querySelector(".conversation__form");
-commentForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const incomingComment = {
-    name: e.target.name.value,
-    comment: e.target.comment.value,
-    date: Date.now(),
-    avatar: null,
-  };
-  comments.push(incomingComment);
-  unloadComments(commentList);
-  loadComments(comments);
-  commentForm.reset();
-});
-
-/**
- * call the function to load the comments on initial page load
- */
-
 const loadRemote = () => {
   axios
-    .get(`${API_BASEURL}comments/${API_KEY}`)
+    .get(`${API_BASEURL}comments${API_KEY}`)
     .then((response) => {
       let commentData = response.data;
       commentData.sort((a, b) => {
@@ -150,4 +130,37 @@ const loadRemote = () => {
     });
 };
 
+const postRemote = (comment) => {
+  axios.post(`${API_BASEURL}comments${API_KEY}`, comment).then((response) => {
+    console.log(response);
+  });
+};
+
+/**
+ * event listener to grab form data, convert to a comments object,
+ * push that object into the comments array, and then load the comments.
+ */
+const commentForm = document.querySelector(".conversation__form");
+commentForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // const incomingComment = {
+  //   name: e.target.name.value,
+  //   comment: e.target.comment.value,
+  //   date: Date.now(),
+  //   avatar: null,
+  // };
+
+  const incomingComment = {
+    name: `${e.target.name.value}`,
+    comment: `${e.target.comment.value}`,
+  };
+  postRemote(incomingComment);
+  unloadComments(commentList);
+  loadRemote();
+  commentForm.reset();
+});
+
+/**
+ * Call the function to load the remote comments when the page loads.
+ */
 loadRemote();

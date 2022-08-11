@@ -1,36 +1,3 @@
-// const showsData = [
-//   {
-//     date: "09/06/2021",
-//     venue: "Ronald Lane",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "09/21/2021",
-//     venue: "Pier 3 East",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "10/15/2021",
-//     venue: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "11/06/2021",
-//     venue: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "11/26/2021",
-//     venue: "Moscow Cener",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "12/15/2021",
-//     venue: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
-
 /**
  * API DETAILS
  */
