@@ -114,5 +114,4 @@ showsData.forEach((show) => {
   showsList.appendChild(showVenueLi);
   showsList.appendChild(showLocationLi);
   showsList.appendChild(showBuyTicketsLi);
-  // console.log(showsListing);
 });

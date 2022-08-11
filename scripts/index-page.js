@@ -86,7 +86,6 @@ const displayComment = (commentData) => {
   commentsLeft.appendChild(commentsAvatar);
   commentBox.appendChild(commentsLeft);
   commentBox.appendChild(commentsRight);
-  console.log(commentBox);
   commentList.appendChild(commentBox);
 };
 
@@ -96,7 +95,7 @@ const displayComment = (commentData) => {
  * @param {array} commentsArray
  */
 const loadComments = (commentsArray) => {
-  console.log("LOADING");
+  console.info("LOADING COMMENTS");
   commentsArray.forEach((comment) => {
     displayComment(comment);
   });
@@ -107,7 +106,7 @@ const loadComments = (commentsArray) => {
  * @param {DOM Element} element
  */
 const unloadComments = (element) => {
-  console.log("UNLOADING");
+  console.info("UNLOADING COMMENTS");
   while (element.hasChildNodes()) {
     element.removeChild(element.firstChild);
   }
@@ -140,7 +139,6 @@ const loadRemote = () => {
   axios
     .get(`${API_BASEURL}comments/${API_KEY}`)
     .then((response) => {
-      console.log(response.data);
       let commentData = response.data;
       commentData.sort((a, b) => {
         return a.timestamp - b.timestamp;
