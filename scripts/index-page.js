@@ -1,34 +1,11 @@
-const comments = [
-  {
-    name: "Connor Walton",
-    date: Date.parse("02/17/2021"),
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    avatar: null,
-  },
-  {
-    name: "Emilie Beach",
-    date: Date.parse("01/09/2021"),
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    avatar: null,
-  },
-  {
-    name: "Miles Acosta",
-    date: Date.parse("12/20/2020"),
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    avatar: null,
-  },
-];
+// -----------------------------------------------------------------------------------------------------------------------
 
 /**
- * Sort all available comments by the date they were made
- * sort oldest to newest.
+ * API DETAILS
  */
-comments.sort((a, b) => {
-  return a.date - b.date;
-});
+
+const API_KEY = "?api_key=bd6be8d0-bde7-4b66-848d-bccaa5394a3a";
+const API_BASEURL = "https://project-1-api.herokuapp.com/";
 
 /**
  * The DOM element that will function as the parent element for the comment list.
@@ -74,7 +51,7 @@ const displayComment = (commentData) => {
     "conversation__label",
     "conversation__label--name"
   );
-  commenterNameP.innerHTML = commentData.name;
+  commenterNameP.innerText = commentData.name;
   commenterName.appendChild(commenterNameP);
 
   const commenterDate = document.createElement("div");
@@ -85,7 +62,7 @@ const displayComment = (commentData) => {
     "conversation__label--date"
   );
 
-  const commentDateDate = new Date(commentData.date);
+  const commentDateDate = new Date(commentData.timestamp);
 
   commenterDateP.innerText = commentDateDate.toLocaleDateString("en-US");
   commenterDate.appendChild(commenterDateP);
@@ -137,11 +114,6 @@ const unloadComments = (element) => {
 };
 
 /**
- * call the function to load the comments on initial page load
- */
-loadComments(comments);
-
-/**
  * event listener to grab form data, convert to a comments object,
  * push that object into the comments array, and then load the comments.
  */
@@ -159,3 +131,25 @@ commentForm.addEventListener("submit", (e) => {
   loadComments(comments);
   commentForm.reset();
 });
+
+/**
+ * call the function to load the comments on initial page load
+ */
+
+const loadRemote = () => {
+  axios
+    .get(`${API_BASEURL}comments/${API_KEY}`)
+    .then((response) => {
+      console.log(response.data);
+      let commentData = response.data;
+      commentData.sort((a, b) => {
+        return a.timestamp - b.timestamp;
+      });
+      loadComments(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+loadRemote();
