@@ -1,40 +1,52 @@
-const showsData = [
-  {
-    date: "09/06/2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "09/21/2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "10/15/2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "11/06/2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "11/26/2021",
-    venue: "Moscow Cener",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "12/15/2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// const showsData = [
+//   {
+//     date: "09/06/2021",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "09/21/2021",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "10/15/2021",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "11/06/2021",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "11/26/2021",
+//     venue: "Moscow Cener",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "12/15/2021",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
 
-// grab shows__listing div
+/**
+ * API DETAILS
+ */
+const API_KEY = "?api_key=bd6be8d0-bde7-4b66-848d-bccaa5394a3a";
+const API_BASEURL = "https://project-1-api.herokuapp.com/";
+
+/**
+ * DOM Element for the shows listing.
+ */
 const showsListing = document.querySelector(".shows__listing");
 
-showsData.forEach((show) => {
+/**
+ * function to display a single shows data.
+ * @param {Object} show
+ */
+const displayShow = (show) => {
   // create the ul and append it to the surrounding div
   const showsList = document.createElement("ul");
   showsList.classList.add("shows__list", "shows__list--shows");
@@ -54,7 +66,9 @@ showsData.forEach((show) => {
     "shows__item--text",
     "shows__item--bold"
   );
-  showDateP.innerText = show.date;
+
+  const showDateData = new Date(show.date);
+  showDateP.innerText = showDateData.toLocaleDateString("en-US");
 
   showDateLi.appendChild(showDateHeader);
   showDateLi.appendChild(showDateP);
@@ -69,7 +83,7 @@ showsData.forEach((show) => {
 
   const showVenueP = document.createElement("p");
   showVenueP.classList.add("shows__item", "shows__item--text");
-  showVenueP.innerText = show.venue;
+  showVenueP.innerText = show.place;
 
   showVenueLi.appendChild(showVenueHeader);
   showVenueLi.appendChild(showVenueP);
@@ -100,6 +114,11 @@ showsData.forEach((show) => {
   showBuyTicketsButton.innerText = "Buy Tickets";
 
   showBuyTicketsLi.appendChild(showBuyTicketsButton);
+  // append the date, venue, location, buy tickets lis to the ul.
+  showsList.appendChild(showDateLi);
+  showsList.appendChild(showVenueLi);
+  showsList.appendChild(showLocationLi);
+  showsList.appendChild(showBuyTicketsLi);
 
   showsList.addEventListener("click", (e) => {
     const selectedShow = document.querySelector(".shows__list--selected");
@@ -108,10 +127,15 @@ showsData.forEach((show) => {
     }
     e.currentTarget.classList.add("shows__list--selected");
   });
+};
 
-  // append the date, venue, location, buy tickets lis to the ul.
-  showsList.appendChild(showDateLi);
-  showsList.appendChild(showVenueLi);
-  showsList.appendChild(showLocationLi);
-  showsList.appendChild(showBuyTicketsLi);
-});
+const loadRemoteShows = () => {
+  axios.get(`${API_BASEURL}showdates${API_KEY}`).then((response) => {
+    let showData = response.data;
+    showData.forEach((show) => {
+      displayShow(show);
+    });
+  });
+};
+
+loadRemoteShows();
