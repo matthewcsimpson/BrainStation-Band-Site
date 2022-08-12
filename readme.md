@@ -1,6 +1,15 @@
 Matthew Simpson - Band Site Project - Brain Station
 Summer 2022
 
+Sprint 2 - Functional Requirements
+
+- ✅ The Bio Page must retrieve comment data from the provided API and display it on the page.
+- ✅ Users must be able to add new comments that are stored on the back-end using the API.
+- ✅ New comments that are added must be displayed with the existing comments, the newest comments being at the top.
+- ✅ The Bio Page must not reload when comments are added.
+- ✅ New comments are not required to have a provided avatar image, but can use a placeholder.
+- ✅ The Shows Page must display the shows data retrieved from the API.
+
 Sprint 2 - Feedback
 
 - Keep in mind that all your styling will eventually be processed and lies within the bio.css. When using relative path you need to consider where it is relative to. For your typography, try to link it with “../” instead of “../../”, because you want to link it with relative path from bio.css. However, the live server still does that for you. But for someone who will open your project without live server they won't see the font.

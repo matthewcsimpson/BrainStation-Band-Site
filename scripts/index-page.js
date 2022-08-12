@@ -3,8 +3,9 @@
 /**
  * API DETAILS
  */
-const API_KEY = "?api_key=bd6be8d0-bde7-4b66-848d-bccaa5394a3a";
-const API_BASEURL = "https://project-1-api.herokuapp.com/";
+
+const API_URL =
+  "https://project-1-api.herokuapp.com/comments?api_key=bd6be8d0-bde7-4b66-848d-bccaa5394a3a";
 
 /**
  * The DOM element that will function as the parent element for the comment list.
@@ -106,6 +107,7 @@ const loadComments = (commentsArray) => {
  * @param {DOM Element} element
  */
 const unloadComments = (element) => {
+  console.info("removing comments from the DOM");
   while (element.hasChildNodes()) {
     element.removeChild(element.firstChild);
   }
@@ -115,8 +117,9 @@ const unloadComments = (element) => {
  * function to load comments from remote server.
  */
 const loadRemote = () => {
+  console.info("loading comments from the server");
   axios
-    .get(`${API_BASEURL}comments${API_KEY}`)
+    .get(`${API_URL}`)
     .then((response) => {
       let commentData = response.data;
       commentData.sort((a, b) => {
@@ -134,9 +137,20 @@ const loadRemote = () => {
  * @param {Object} comment
  */
 const postRemote = (comment) => {
-  axios.post(`${API_BASEURL}comments${API_KEY}`, comment).then((response) => {
-    console.info(response); // leaving this in for now.
-  });
+  axios
+    .post(`${API_URL}`, comment)
+    .then((response) => {
+      console.info(response);
+      return response; // leaving this in for now.
+    })
+    .then(() => {
+      unloadComments(commentList);
+      loadRemote();
+      commentForm.reset();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 /**
@@ -151,9 +165,6 @@ commentForm.addEventListener("submit", (e) => {
     comment: `${e.target.comment.value}`,
   };
   postRemote(incomingComment);
-  unloadComments(commentList);
-  loadRemote();
-  commentForm.reset();
 });
 
 /**
