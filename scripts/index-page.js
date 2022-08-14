@@ -6,7 +6,6 @@
 
 const API_KEY = "?api_key=bd6be8d0-bde7-4b66-848d-bccaa5394a3a";
 const API_COMMENTS = "https://project-1-api.herokuapp.com/comments/";
-
 const API_LIKES = "https://project-1-api.herokuapp.com/comments/";
 
 /**
@@ -158,7 +157,7 @@ const loadComments = (commentsArray) => {
  * @param {DOM Element} element
  */
 const unloadComments = (element) => {
-  console.info("removing comments from the DOM");
+  console.info("removing comments from the DOM"); // leaving this in for informational purposes.
   while (element.hasChildNodes()) {
     element.removeChild(element.firstChild);
   }
@@ -168,7 +167,7 @@ const unloadComments = (element) => {
  * function to load comments from remote server.
  */
 const loadRemote = () => {
-  console.info("loading comments from the server");
+  console.info("loading comments from the server"); // leaving this in for informational purposes.
   axios
     .get(`${API_COMMENTS}${API_KEY}`)
     .then((response) => {
@@ -204,7 +203,7 @@ const loadRemote = () => {
       });
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
 };
 
@@ -216,8 +215,8 @@ const postRemote = (comment) => {
   axios
     .post(`${API_COMMENTS}${API_KEY}`, comment)
     .then((response) => {
-      console.info(response);
-      return response; // leaving this in for now.
+      console.info(response); // leaving this in for informational purposes.
+      return response;
     })
     .then(() => {
       unloadComments(commentList);
@@ -225,7 +224,7 @@ const postRemote = (comment) => {
       commentForm.reset();
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
 };
 
