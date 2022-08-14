@@ -4,13 +4,59 @@
  * API DETAILS
  */
 
-const API_URL =
-  "https://project-1-api.herokuapp.com/comments?api_key=bd6be8d0-bde7-4b66-848d-bccaa5394a3a";
+const API_KEY = "?api_key=bd6be8d0-bde7-4b66-848d-bccaa5394a3a";
+const API_COMMENTS = "https://project-1-api.herokuapp.com/comments/";
+
+const API_LIKES = "https://project-1-api.herokuapp.com/comments/";
 
 /**
  * The DOM element that will function as the parent element for the comment list.
  */
 const commentList = document.querySelector(".conversation__comments");
+
+/**
+ * function that accepts a comment id and adds a like, dislike, and delete button
+ */
+const commentInteractive = (id, likes) => {
+  const interactiveWrapper = document.createElement("div");
+  interactiveWrapper.classList.add("conversation__interactive");
+
+  const likesCounter = document.createElement("p");
+  likesCounter.classList.add(
+    "bs-button",
+    "bs-button--small",
+    "bs-button--counter"
+  );
+  likesCounter.setAttribute("name", `${id}`);
+  likesCounter.setAttribute("value", `${likes}`);
+  likesCounter.innerText = `Likes: `;
+
+  const likesNum = document.createElement("span");
+  likesNum.classList.add("total__likes");
+  likesNum.setAttribute("id", `likes-${id}`);
+  likesNum.innerText = `${likes}`;
+  likesCounter.appendChild(likesNum);
+
+  const likeButton = document.createElement("button");
+  likeButton.classList.add("bs-button", "bs-button--small", "bs-button--like");
+  likeButton.setAttribute("name", `${id}`);
+  likeButton.innerText = "👍";
+
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add(
+    "bs-button",
+    "bs-button--small",
+    "bs-button--delete"
+  );
+  deleteButton.setAttribute("name", `${id}`);
+  deleteButton.innerText = "❌";
+
+  interactiveWrapper.appendChild(likesCounter);
+  interactiveWrapper.appendChild(likeButton);
+  interactiveWrapper.appendChild(deleteButton);
+
+  return interactiveWrapper;
+};
 
 /**
  * functon that accepts a comment object and
@@ -77,16 +123,20 @@ const displayComment = (commentData) => {
   commentTextP.classList.add("conversation__text");
   commentTextP.innerText = commentData.comment;
 
+  const interactives = commentInteractive(commentData.id, commentData.likes);
+
   commentDetails.appendChild(commenterName);
   commentDetails.appendChild(commenterDate);
   commentTextBox.appendChild(commentTextP);
 
   commentsRight.appendChild(commentDetails);
   commentsRight.appendChild(commentTextBox);
+  commentsRight.appendChild(interactives);
 
   // put it all together
   commentsLeft.appendChild(commentsAvatarLabel);
   commentsLeft.appendChild(commentsAvatar);
+
   commentBox.appendChild(commentsLeft);
   commentBox.appendChild(commentsRight);
   commentList.appendChild(commentBox);
@@ -120,13 +170,38 @@ const unloadComments = (element) => {
 const loadRemote = () => {
   console.info("loading comments from the server");
   axios
-    .get(`${API_URL}`)
+    .get(`${API_COMMENTS}${API_KEY}`)
     .then((response) => {
       let commentData = response.data;
       commentData.sort((a, b) => {
         return a.timestamp - b.timestamp;
       });
       loadComments(response.data);
+      const hitLikeButton = document.querySelectorAll(".bs-button--like");
+      const hitDelete = document.querySelectorAll(".bs-button--delete");
+
+      // listen to the like button, and increment likes if clicked.
+      hitLikeButton.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          axios
+            .put(`${API_LIKES}${e.target.name}/like${API_KEY}`)
+            .then((response) => {
+              const totalLikes = document.getElementById(
+                `likes-${response.data.id}`
+              );
+              totalLikes.innerText = `${response.data.likes}`;
+            });
+        });
+      });
+
+      // listen to the delete button, and delete comment if clicked.
+      hitDelete.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          axios.delete(`${API_COMMENTS}${e.target.name}${API_KEY}`).then(() => {
+            unloadComments(commentList), loadRemote();
+          });
+        });
+      });
     })
     .catch((error) => {
       console.log(error);
@@ -139,7 +214,7 @@ const loadRemote = () => {
  */
 const postRemote = (comment) => {
   axios
-    .post(`${API_URL}`, comment)
+    .post(`${API_COMMENTS}${API_KEY}`, comment)
     .then((response) => {
       console.info(response);
       return response; // leaving this in for now.

@@ -326,10 +326,6 @@
 
         &--avatar {
             visibility: hidden;
-
-            &-posted {
-                display: none;
-            }
         }
 
         &--name {
@@ -348,6 +344,14 @@
             line-height: $desktop-body-copy-lh;
 
         }
+    }
+
+    &__interactive {
+        border: 1px solid green;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     &__input {
@@ -377,8 +381,5 @@
         &:focus {
             outline: $bandsite-darkblack;
         }
-
-
-
     }
 }

@@ -319,6 +319,19 @@ body {
 .bs-button:hover {
   background-color: #000000;
 }
+.bs-button--small {
+  display: inline-block;
+  min-height: 15%;
+  max-height: 15%;
+}
+.bs-button--counter {
+  text-align: center;
+  color: #323232;
+  background-color: #FFFFFF;
+}
+.bs-button--counter:hover {
+  background-color: #FFFFFF;
+}
 
 .hero {
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
@@ -630,9 +643,6 @@ body {
 .conversation__label--avatar {
   visibility: hidden;
 }
-.conversation__label--avatar-posted {
-  display: none;
-}
 .conversation__label--name {
   color: #323232;
   text-transform: capitalize;
@@ -646,6 +656,13 @@ body {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
+}
+.conversation__interactive {
+  border: 1px solid green;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .conversation__input {
   min-height: 2.25rem;

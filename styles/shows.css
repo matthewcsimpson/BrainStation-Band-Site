@@ -319,6 +319,19 @@ body {
 .bs-button:hover {
   background-color: #000000;
 }
+.bs-button--small {
+  display: inline-block;
+  min-height: 15%;
+  max-height: 15%;
+}
+.bs-button--counter {
+  text-align: center;
+  color: #323232;
+  background-color: #FFFFFF;
+}
+.bs-button--counter:hover {
+  background-color: #FFFFFF;
+}
 
 .shows-hero {
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);

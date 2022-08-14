@@ -310,4 +310,21 @@ body {
         background-color: $bandsite-darkblack;
     }
 
+    &--small {
+        display: inline-block;
+        min-height: 15%;
+        max-height: 15%;
+
+    }
+
+    &--counter {
+        text-align: center;
+        color: $bandsite-black;
+        background-color: $bandsite-white;
+
+        &:hover {
+            background-color: $bandsite-white;
+        }
+    }
+
 }
