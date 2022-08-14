@@ -35,9 +35,7 @@ const displayShow = (show) => {
   );
 
   const showDateData = new Date(show.date);
-  const dateOptions = { day: "2-digit", month: "2-digit", year: "numeric" };
-
-  showDateP.innerText = showDateData.toLocaleDateString("en-US", dateOptions);
+  showDateP.innerText = showDateData.toDateString();
 
   showDateLi.appendChild(showDateHeader);
   showDateLi.appendChild(showDateP);

@@ -296,6 +296,7 @@ body {
     font-size: $mobile-buttons-size;
     line-height: $mobile-buttons-lh;
     font-weight: $font-bold;
+    text-transform: uppercase;
 
     @include tablet {
         min-width: 9.375rem;

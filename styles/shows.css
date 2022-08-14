@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf);
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf);
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
   font-weight: 600;
   font-style: normal;
 }
@@ -305,6 +305,7 @@ body {
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
   .bs-button {
@@ -333,7 +334,7 @@ body {
 }
 @media (min-width: 768px) {
   .shows-hero__wrapper {
-    padding: 0 1.625rem;
+    padding: 0 1rem;
   }
 }
 @media (min-width: 1280px) {
@@ -379,7 +380,6 @@ body {
 }
 .shows-hero__right {
   flex-basis: 50%;
-  padding: 1rem;
 }
 @media (min-width: 768px) {
   .shows-hero__right {
@@ -406,6 +406,7 @@ body {
 }
 @media (min-width: 1280px) {
   .shows__wrapper {
+    flex-direction: row;
     padding: 0 5rem;
     max-width: 1280px;
     margin: 0 auto;
@@ -422,6 +423,17 @@ body {
     font-size: 2.25rem;
     line-height: 2.75rem;
     padding-top: 3rem;
+    width: 20%;
+  }
+}
+@media (min-width: 768px) {
+  .shows__listing {
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__listing {
+    width: 80%;
   }
 }
 .shows__list {
@@ -444,7 +456,6 @@ body {
   .shows__list {
     flex-direction: row;
     justify-content: space-between;
-    max-width: 80%;
     margin: 0 0 0 auto;
   }
 }

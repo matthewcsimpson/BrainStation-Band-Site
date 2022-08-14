@@ -29,7 +29,8 @@ const displayComment = (commentData) => {
   const commentsAvatarLabel = document.createElement("p");
   commentsAvatarLabel.classList.add(
     "conversation__label",
-    "conversation__label--avatar"
+    "conversation__label--avatar",
+    "conversation__label--avatar-posted"
   );
   commentsAvatarLabel.innerText = "Avatar";
   const commentsAvatar = document.createElement("div");

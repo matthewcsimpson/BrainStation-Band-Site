@@ -16,14 +16,14 @@
         flex-direction: column;
 
         @include tablet {
-            padding: 0 $desktop-component-p;
+            padding: 0 $mobile-component-p;
         }
 
         @include desktop {
             padding: 0 $desktop-wider-p;
             flex-direction: row;
             align-items: center;
-            max-width: 1280px;
+            max-width: $desktop-width;
             margin: 0 auto;
         }
     }
@@ -60,12 +60,14 @@
         flex-basis: 50%;
         padding: $mobile-component-p;
 
-        @include tablet {}
+        // @include desktop {
+        //     padding: 0 $desktop-component-p;
+        // }
     }
 
     &__right {
         flex-basis: 50%;
-        padding: $mobile-component-p;
+        // padding: 0 $mobile-component-p;
 
         @include tablet {
             max-width: 600px;
@@ -75,26 +77,30 @@
         @include desktop {
             width: 50%;
             align-self: center;
+            // padding: 0 $desktop-component-p
         }
     }
 }
 
+// shows listing 
+
 .shows {
 
     &__wrapper {
-        padding: 0 1rem;
+        padding: 0 $mobile-component-p;
         display: flex;
         flex-direction: column;
 
         @include tablet {
             padding: 0 $desktop-component-p;
-
         }
 
         @include desktop {
+            flex-direction: row;
             padding: 0 $desktop-wider-p;
-            max-width: 1280px;
+            max-width: $desktop-width;
             margin: 0 auto;
+
         }
     }
 
@@ -108,6 +114,19 @@
             font-size: $desktop-section-header-size;
             line-height: $desktop-section-header-lh;
             padding-top: $desktop-headline-p-top;
+            width: 20%;
+        }
+
+        @include desktop {}
+    }
+
+    &__listing {
+        @include tablet {
+            width: 100%;
+        }
+
+        @include desktop {
+            width: 80%;
         }
     }
 
@@ -136,7 +155,6 @@
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
-            max-width: 80%;
             margin: 0 0 0 auto;
         }
 

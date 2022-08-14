@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf);
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf);
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
   font-weight: 600;
   font-style: normal;
 }
@@ -305,6 +305,7 @@ body {
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
   .bs-button {
@@ -548,7 +549,7 @@ body {
 @media (min-width: 1280px) {
   .conversation__wrapper {
     padding: 0 5rem;
-    max-width: 1280px;
+    max-width: 768px;
     margin: 0 auto;
   }
 }
@@ -614,12 +615,12 @@ body {
   justify-content: space-between;
 }
 .conversation__label {
+  display: block;
   text-transform: uppercase;
   font-size: 0.625rem;
   font-weight: 600;
   color: #AFAFAF;
   width: 100%;
-  display: inline-block;
 }
 @media (min-width: 768px) {
   .conversation__label {
@@ -629,8 +630,12 @@ body {
 .conversation__label--avatar {
   visibility: hidden;
 }
+.conversation__label--avatar-posted {
+  display: none;
+}
 .conversation__label--name {
   color: #323232;
+  text-transform: capitalize;
 }
 .conversation__text {
   font-size: 0.8125rem;
@@ -648,15 +653,21 @@ body {
   border: 1px solid #E1E1E1;
   border-radius: 4px;
   padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #FAFAFA;
 }
 .conversation__input--comment {
   min-height: 4.5rem;
   font-family: "Avenir-Next";
   vertical-align: middle;
+  resize: none;
 }
-.conversation__input:invalid:required {
-  border: 1px solid #D22D2D;
+.conversation__input:invalid {
+  outline: #D22D2D;
 }
 .conversation__input:active {
-  border: 1px solid #323232;
+  outline: #323232;
+}
+.conversation__input:focus {
+  outline: #000000;
 }/*# sourceMappingURL=bio.css.map */

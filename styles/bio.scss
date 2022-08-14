@@ -25,7 +25,7 @@
 
         @include desktop {
             padding: 0 $desktop-wider-p;
-            max-width: 1280px;
+            max-width: $desktop-width;
             margin: 0 auto;
         }
     }
@@ -57,7 +57,7 @@
 
         @include desktop {
             padding: 0 $desktop-wider-p;
-            max-width: 1280px;
+            max-width: $desktop-width;
             margin: 0 auto;
         }
     }
@@ -184,7 +184,7 @@
 
         @include desktop {
             padding: 0 $desktop-wider-p;
-            max-width: 1280px;
+            max-width: $desktop-width;
             margin: 0 auto;
         }
     }
@@ -239,7 +239,7 @@
 
         @include desktop {
             padding: 0 $desktop-wider-p;
-            max-width: 1280px;
+            max-width: $tablet-width;
             margin: 0 auto;
         }
     }
@@ -313,12 +313,12 @@
     }
 
     &__label {
+        display: block;
         text-transform: uppercase;
         font-size: $mobile-buttons-size;
         font-weight: $font-demi;
         color: $bandsite-silver;
         width: 100%;
-        display: inline-block;
 
         @include tablet {
             font-size: $desktop-buttons-size;
@@ -326,10 +326,15 @@
 
         &--avatar {
             visibility: hidden;
+
+            &-posted {
+                display: none;
+            }
         }
 
         &--name {
             color: $bandsite-black;
+            text-transform: capitalize;
         }
 
     }
@@ -351,19 +356,29 @@
         border: 1px solid $bandsite-mercury;
         border-radius: 4px;
         padding: $mobile-component-p;
+        margin-bottom: $mobile-component-p;
+        background-color: $bandsite-alabaster;
 
         &--comment {
             min-height: 4.5rem;
             font-family: $bandsite-font;
             vertical-align: middle;
+            resize: none;
         }
 
-        &:invalid:required {
-            border: 1px solid $bandsite-formerror;
+        &:invalid {
+            outline: $bandsite-formerror;
         }
 
         &:active {
-            border: 1px solid $bandsite-black;
+            outline: $bandsite-black;
         }
+
+        &:focus {
+            outline: $bandsite-darkblack;
+        }
+
+
+
     }
 }
