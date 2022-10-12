@@ -5,8 +5,7 @@
 // Hero Section -------------------------
 
 .hero {
-    background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
-        url(../assets/images/hero-bio.jpg);
+    background: linear-gradient(rgba(33, 33, 33, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -286,7 +285,7 @@
 
         &--left {
             width: 3.5rem;
-            padding-top: .25rem;
+            padding-top: 0.25rem;
             display: flex;
             flex-direction: column;
         }
@@ -332,7 +331,6 @@
             color: $bandsite-black;
             text-transform: capitalize;
         }
-
     }
 
     &__text {
@@ -342,7 +340,6 @@
         @include tablet {
             font-size: $desktop-body-copy-size;
             line-height: $desktop-body-copy-lh;
-
         }
     }
 
