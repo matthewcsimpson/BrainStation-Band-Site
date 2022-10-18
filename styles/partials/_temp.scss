@@ -1,0 +1,159 @@
+.footer {}
+
+.footer__wrapper {}
+
+.footer__heading {}
+
+.footer__social-icons{}
+
+.footer {
+    background: $bandsite-black;
+    color: $bandsite-white;
+    margin-top: $mobile-component-p;
+
+    &__wrapper {
+        width: 70%;
+        padding: 0 $mobile-component-p $mobile-component-p;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            margin-top: $desktop-headline-p-top;
+            width: 100%;
+            padding: $desktop-headline-p-top $desktop-component-p $desktop-component-p;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @include desktop {
+            justify-content: flex-start;
+            padding: $desktop-headline-p-top $desktop-wider-p $desktop-component-p;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+    }
+
+    &__heading {
+        font-size: $mobile-section-header-size;
+        line-height: $mobile-section-header-lh;
+        font-weight: $font-bold;
+        margin-top: $mobile-headline-p-top;
+
+        @include tablet {
+            font-size: $desktop-section-header-size;
+            line-height: $desktop-section-header-lh;
+            font-weight: $font-bold;
+            width: 33%;
+        }
+
+        @include desktop {
+            width: 25%;
+        }
+    }
+
+    &__social-icons {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: $mobile-headline-p-top;
+
+        @include tablet {
+            width: 33%;
+            justify-content: flex-start;
+        }
+
+        @include desktop {
+            width: 25%;
+        }
+    }
+
+    &__social-icon {
+        width: $mobile-section-header-size;
+        height: $mobile-section-header-size;
+
+        @include tablet {
+            width: $desktop-section-header-size;
+            height: $desktop-section-header-size;
+            margin-right: 2rem;
+        }
+    }
+
+    &__logo {
+        margin-top: $mobile-headline-p-top;
+        order: 1;
+
+        @include tablet {
+            order: 0;
+            width: 33%;
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+        }
+
+        @include desktop {
+            width: 50%;
+        }
+    }
+
+    &__logo-img {
+        height: 1.25rem;
+        width: 7.5rem;
+    }
+
+    &__contact-card {
+        margin-top: $mobile-headline-p-top;
+        padding: $mobile-component-p 0 0;
+        height: 9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            width: 33%;
+            height: 10rem;
+        }
+
+        @include desktop {
+            width: 25%;
+        }
+    }
+
+    &__copyright {
+        order: 2;
+        padding-top: $mobile-component-p;
+
+        @include tablet {
+            order: 0;
+            width: 100%;
+            padding-top: $desktop-component-p;
+            align-self: flex-end;
+        }
+    }
+
+    &__copy {
+        font-size: $mobile-footer-copy-size;
+        line-height: $mobile-footer-copy-lh;
+
+        @include tablet {
+            font-size: $desktop-footer-copy-size;
+            line-height: $desktop-footer-copy-lh;
+        }
+
+        &--name {
+            font-weight: $font-demi;
+        }
+
+        &--link {
+            font-size: $mobile-footer-copy-size;
+            line-height: $mobile-footer-copy-lh;
+            text-decoration: none;
+            color: $bandsite-white;
+
+            @include tablet {
+                font-size: $desktop-footer-copy-size;
+                line-height: $desktop-footer-copy-lh;
+            }
+        }
+    }
+}
