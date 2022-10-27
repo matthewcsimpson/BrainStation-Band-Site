@@ -92,8 +92,9 @@ const displayShow = (show) => {
     const selectedShow = document.querySelector(".shows__list--selected");
     if (selectedShow) {
       selectedShow.classList.remove("shows__list--selected");
+    } else {
+      e.currentTarget.classList.add("shows__list--selected");
     }
-    e.currentTarget.classList.add("shows__list--selected");
   });
 };
 
